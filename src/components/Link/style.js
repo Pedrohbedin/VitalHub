@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const LinkMedium = styled.Text`
-    color: #8C8A97;
-    font-size: 14px;
     font-family: 'MontserratAlternates_500Medium';
+    font-size: 14px;
+    color: #8C8A97;
+    text-decoration: underline;
+        
     width: 90%;
+    margin-top: 10px;
 `
