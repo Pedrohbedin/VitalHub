@@ -9,3 +9,9 @@ export const LinkMedium = styled.Text`
     width: 90%;
     margin-top: 10px;
 `
+
+export const LinkAccount = styled(LinkMedium)`
+    font-family: "MontserratAlternates_600SemiBold";
+    color: #4D659D;
+    text-align: center;
+`

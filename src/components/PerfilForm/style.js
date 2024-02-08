@@ -1,0 +1,13 @@
+import styled from "styled-components";
+
+export const PerfilForm = styled.View`
+    width: 80%;
+    height: 125px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    position: relative;
+    bottom: 50px;
+    elevation: 20;
+    align-items: center;
+    margin-bottom: -25px;
+`

@@ -1,23 +1,26 @@
 import { Container } from "../../components/Container/Style";
-import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
 import { Title, ButtonTitle, ButtonTitleGoogle } from "../../components/Title/style";
 import { LogoVitalHub } from "../../components/Logo";
 import { Input } from "../../components/Input/style";
-import { LinkMedium } from "../../components/Link/style";
-import { Linking } from "react-native";
+import { LinkAccount, LinkMedium } from "../../components/Link/style";
+import { useNavigation } from "@react-navigation/native";
 import { Button, ButtonGoogle } from "../../components/Button/style";
 import { Icon } from "react-native-elements"
+import { ContentAccount } from "../../components/ContentAccount/style";
+import { TextAccount } from "../../components/TextAccount/style";
 
 export const Login = () => {
 
-    let [fontsLoaded, fontError] = useFonts({
-        MontserratAlternates_600SemiBold,
-        MontserratAlternates_500Medium,
-        MontserratAlternates_700Bold,
-    });
+    const navigation = useNavigation();
 
-    if (!fontsLoaded && !fontError) {
-        return null;
+    const Recuperar = () => {
+
+        navigation.navigate('RecoverPassword');
+    }
+    
+    const Cadastrar = () => {
+
+        navigation.navigate('Singup');
     }
 
     return (
@@ -29,7 +32,7 @@ export const Login = () => {
             <Input placeholder="Senha" placeholderTextColor="#49B3BA" />
 
             <LinkMedium
-                onPress={() => { Linking.openURL('https://reactnative.dev'); }}>Esqueceu sua senha?</LinkMedium>
+                onPress={Recuperar}>Esqueceu sua senha?</LinkMedium>
 
             <Button>
                 <ButtonTitle>Entrar</ButtonTitle>
@@ -46,8 +49,8 @@ export const Login = () => {
             </ButtonGoogle>
 
             <ContentAccount>
-                <TextAccount>Não tem conta? <Text>Crie uma conta agora!</Text></TextAccount>
-            </ContentAccount> 
+                <TextAccount>Não tem conta? <LinkAccount onPress={Cadastrar}>Crie uma conta agora!</LinkAccount></TextAccount>
+            </ContentAccount>
         </Container>
     )
 }

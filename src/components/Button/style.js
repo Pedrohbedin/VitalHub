@@ -10,6 +10,18 @@ export const Button = styled.TouchableOpacity`
     border: 1px solid #496BBA;
 `
 
+export const FuncButton = styled.TouchableOpacity`
+    background-color: rgba(73, 179, 186, .15);
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    position: fixed;
+    right: 40%;
+    top: 20px;
+`
+
 export const ButtonGoogle = styled(Button)`
     background-color: #FAFAFA;
     justify-content: center;
