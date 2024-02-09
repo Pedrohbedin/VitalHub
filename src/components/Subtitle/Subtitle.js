@@ -4,9 +4,8 @@ export const Subtitle = styled.Text`
     color: #5F5C6B;
     font-family: "Quicksand_500Medium";
     font-size: 16px;
-    width: 90%;
     text-align: center;
-    margin: 15px ;
+    margin: 15px 0px;
 `
 
 export const Email = styled(Subtitle)`

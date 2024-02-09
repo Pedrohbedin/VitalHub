@@ -6,7 +6,7 @@ import { Input } from "../../components/Input/style"
 import { ButtonTitle } from "../../components/Title/style"
 import { useNavigation } from "@react-navigation/native"
 
-export const NewPassword = () => {
+export const NovaSenha = () => {
 
     const navigation = useNavigation();
     const onPress = () => {

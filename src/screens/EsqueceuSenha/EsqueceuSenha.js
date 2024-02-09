@@ -7,18 +7,13 @@ import { Button, FuncButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 
-export const RecoverPassword = () => {
+export const EsqueceuSenha = () => {
 
     const navigation = useNavigation();
 
-    const onPress = () => {
-
-        navigation.navigate('Login');
-    }
-
     return (
         <Container>
-            <FuncButton onPress={onPress}>
+            <FuncButton onPress={() => navigation.navigate('Login')}>
                 <Icon
                     color="#34898F"
                     size={30}

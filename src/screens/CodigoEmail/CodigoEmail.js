@@ -6,9 +6,9 @@ import { ButtonTitle, Title } from "../../components/Title/style"
 import { Email, Subtitle } from "../../components/Subtitle/Subtitle"
 import { CodeInput } from "../../components/Input/style"
 import { useNavigation } from "@react-navigation/native"
-import { LinkAccount } from "../../components/Link/style"
+import { DbLink } from "../../components/Link/style"
 
-export const EmailCode = () => {
+export const CodigoEmail = () => {
 
     const navigation = useNavigation()
     const onPress = () => {
@@ -39,7 +39,7 @@ export const EmailCode = () => {
             <Button>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
-            <LinkAccount>Reenviar Código</LinkAccount>
+            <DbLink>Reenviar Código</DbLink>
         </Container>
     )
 }

@@ -9,25 +9,28 @@ export const Navigation = ({ navigation }) => {
             />
             <Button
                 title="Esqueceu a senha"
-                onPress={() => navigation.navigate("RecoverPassword")}
+                onPress={() => navigation.navigate("EsqueceuSenha")}
             />
             <Button
                 title="Código de Email"
-                onPress={() => navigation.navigate("EmailCode")}
+                onPress={() => navigation.navigate("CodigoEmail")}
             />
             <Button
                 title="Nova senha"
-                onPress={() => navigation.navigate("NewPassword")}
+                onPress={() => navigation.navigate("NovaSenha")}
             />
             <Button
                 title="Cadastrar"
-                onPress={() => navigation.navigate("Singup")}
+                onPress={() => navigation.navigate("Cadastrar")}
             />
             <Button
                 title="Perfil"
                 onPress={() => navigation.navigate("Perfil")}
             />
-
+            <Button
+                title="Prontuario"
+                onPress={() => navigation.navigate("Prontuario")}
+            />
         </View>
     )
 }

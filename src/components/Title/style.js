@@ -7,7 +7,7 @@ export const Title = styled.Text`
     margin: 10px 0px;
 `
 
-export const PerfilTitle = styled(Title)`
+export const MiddleTitle = styled(Title)`
 font-size: 16px;
 width: 90%;
 `
@@ -21,7 +21,7 @@ export const ButtonTitle = styled(Title)`
     text-transform: uppercase;
 `
 
-export const ButtonTitleGoogle = styled(Title)`
+export const BorderedButtonTitle = styled(Title)`
     font-family: 'MontserratAlternates_700Bold';
     padding: 12px 0px;
     margin: 0px;

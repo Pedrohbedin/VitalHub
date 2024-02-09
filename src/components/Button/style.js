@@ -22,7 +22,7 @@ export const FuncButton = styled.TouchableOpacity`
     top: 20px;
 `
 
-export const ButtonGoogle = styled(Button)`
+export const BorderedButton = styled(Button)`
     background-color: #FAFAFA;
     justify-content: center;
     flex-direction: row;

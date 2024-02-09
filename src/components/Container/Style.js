@@ -15,4 +15,5 @@ export const CodeContainer = styled.View`
 export const InfoContainer = styled.View`
     width: 90%;
     flex-direction: row;
+    justify-content: space-around;
 `
