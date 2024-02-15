@@ -29,4 +29,3 @@ export const BorderedButtonTitle = styled(Title)`
     color: #496BBA;
     text-transform: uppercase;
 `
-

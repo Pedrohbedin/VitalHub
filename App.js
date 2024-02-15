@@ -9,6 +9,7 @@ import { CodigoEmail } from "./src/screens/CodigoEmail/CodigoEmail";
 import { NovaSenha } from "./src/screens/NovaSenha/NovaSenha";
 import { Cadastrar } from "./src/screens/Cadastrar/Cadastrar";
 import { Prontuario } from "./src/screens/Prontuario/Prontuario";
+import { Home } from "./src/screens/Home/Home";
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
@@ -40,6 +41,7 @@ export default function App() {
         <Stack.Screen name="Cadastrar" component={Cadastrar} options={{ title: "Cadastrar" }} />
         <Stack.Screen name="Perfil" component={Perfil} options={{ title: "Perfil" }} />
         <Stack.Screen name="Prontuario" component={Prontuario} options={{ title: "Prontuario" }} />
+        <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

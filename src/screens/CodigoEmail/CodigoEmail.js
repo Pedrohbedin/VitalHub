@@ -1,5 +1,5 @@
 import { Icon } from "react-native-elements"
-import { CodeContainer, Container } from "../../components/Container/Style"
+import { SpacedContainer, Container } from "../../components/Container/Style"
 import { Button, FuncButton } from "../../components/Button/style"
 import { LogoVitalHub } from "../../components/Logo"
 import { ButtonTitle, Title } from "../../components/Title/style"
@@ -30,12 +30,12 @@ export const CodigoEmail = () => {
             <Title>Verifique seu e-mail</Title>
             <Subtitle>Digite o código de 4 dígitos enviado para
                 <Email> username@email.com</Email></Subtitle>
-            <CodeContainer>
+            <SpacedContainer>
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
-            </CodeContainer>
+            </SpacedContainer>
             <Button>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>

@@ -1,4 +1,4 @@
-import { Container, InfoContainer } from "../../components/Container/Style"
+import { Container, SpacedContainer } from "../../components/Container/Style"
 import { InfoInput, LittleInfoInput } from "../../components/Input/style"
 import { PerfilForm } from "../../components/Form/style"
 import { PerfilImage } from "../../components/Image/style"
@@ -19,23 +19,26 @@ export const Perfil = () => {
                 </PerfilForm>
 
                 <MiddleTitle>Data de nascimento</MiddleTitle>
-                <InfoInput />
+                <InfoInput editable={false} />
                 <MiddleTitle>CPF</MiddleTitle>
-                <InfoInput />
+                <InfoInput editable={false} keyboardType="numeric" />
                 <MiddleTitle>Endereço</MiddleTitle>
-                <InfoInput />
-                <InfoContainer>
+                <InfoInput editable={false} />
+                <SpacedContainer>
                     <Container>
                         <MiddleTitle>Cep</MiddleTitle>
-                        <LittleInfoInput />
+                        <LittleInfoInput editable={false} keyboardType="numeric" />
                     </Container>
                     <Container>
                         <MiddleTitle>Cidade</MiddleTitle>
-                        <LittleInfoInput />
+                        <LittleInfoInput editable={false} />
                     </Container>
-                </InfoContainer>
+                </SpacedContainer>
                 <Button>
                     <ButtonTitle>Salvar</ButtonTitle>
+                </Button>
+                <Button>
+                    <ButtonTitle>Editar</ButtonTitle>
                 </Button>
             </Container>
         </ScrollView>

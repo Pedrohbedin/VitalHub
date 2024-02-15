@@ -6,6 +6,7 @@ export const Subtitle = styled.Text`
     font-size: 16px;
     text-align: center;
     margin: 15px 0px;
+    width: 90%;
 `
 
 export const Email = styled(Subtitle)`
