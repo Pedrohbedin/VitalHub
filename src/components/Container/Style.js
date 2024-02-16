@@ -22,6 +22,13 @@ export const Header = styled(LinearGradient).attrs({
     width: 100%;
     height: 144px;
     border-radius: 0 0 15px 15px;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
 `;
+
+export const CardContainer = styled.View`
+    width: 90%;
+    elevation: 20;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+`

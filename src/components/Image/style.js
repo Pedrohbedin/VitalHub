@@ -10,3 +10,9 @@ export const HeaderImage = styled.Image`
     height: 60px;
     border-radius: 10px;
 `
+
+export const CardImage = styled.Image`
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+`
