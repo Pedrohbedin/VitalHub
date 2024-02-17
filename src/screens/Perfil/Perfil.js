@@ -2,10 +2,10 @@ import { Container, SpacedContainer } from "../../components/Container/Style"
 import { InfoInput, LittleInfoInput } from "../../components/Input/style"
 import { PerfilForm } from "../../components/Form/style"
 import { PerfilImage } from "../../components/Image/style"
-import { Subtitle } from "../../components/Subtitle/Subtitle"
 import { ButtonTitle, MiddleTitle, Title } from "../../components/Title/style"
 import { Button } from "../../components/Button/style"
 import { ScrollView } from "react-native"
+import { Text } from "../../components/Text/style"
 
 export const Perfil = () => {
     return (
@@ -15,7 +15,7 @@ export const Perfil = () => {
 
                 <PerfilForm>
                     <Title>Richard Kosta</Title>
-                    <Subtitle>richard.kosta@gmail.com</Subtitle>
+                    <Text>richard.kosta@gmail.com</Text>
                 </PerfilForm>
 
                 <MiddleTitle>Data de nascimento</MiddleTitle>
@@ -35,10 +35,10 @@ export const Perfil = () => {
                     </Container>
                 </SpacedContainer>
                 <Button>
-                    <ButtonTitle>Salvar</ButtonTitle>
+                    <ButtonTitle colorText="#FFFFFF">Salvar</ButtonTitle>
                 </Button>
                 <Button>
-                    <ButtonTitle>Editar</ButtonTitle>
+                    <ButtonTitle colorText="#FFFFFF">Editar</ButtonTitle>
                 </Button>
             </Container>
         </ScrollView>

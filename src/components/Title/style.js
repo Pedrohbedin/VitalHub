@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Title = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 20px;
-    color: #33303E;
-    margin: 10px 0px;
+    color: ${(props) => props.colorText};
+    margin: ${(props) => props.margin || "10px 0px"};
 `
 
 export const MiddleTitle = styled(Title)`
@@ -17,7 +17,6 @@ export const ButtonTitle = styled(Title)`
     padding: 12px 0px;
     margin: 0px;
     font-size: 14px;
-    color: #FFFFFF;
     text-transform: uppercase;
 `
 
@@ -26,6 +25,5 @@ export const BorderedButtonTitle = styled(Title)`
     padding: 12px 0px;
     margin: 0px;
     font-size: 14px;
-    color: #496BBA;
     text-transform: uppercase;
 `

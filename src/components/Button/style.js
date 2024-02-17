@@ -7,7 +7,7 @@ export const Button = styled.TouchableOpacity`
     border-radius: 5px;
     padding: 6px;
     margin: 15px 0px;
-    border: 1px solid #496BBA;
+    border: 2px solid #496BBA;
 `
 
 export const FuncButton = styled.TouchableOpacity`

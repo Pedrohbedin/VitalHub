@@ -1,11 +1,11 @@
 import { Container } from "../../components/Container/Style"
 import { LogoVitalHub } from "../../components/Logo"
 import { ButtonTitle, Title } from "../../components/Title/style"
-import { Subtitle } from "../../components/Subtitle/Subtitle";
 import { Input } from "../../components/Input/style";
 import { Button, FuncButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import { Text } from "../../components/Text/style";
 
 export const EsqueceuSenha = () => {
 
@@ -23,10 +23,10 @@ export const EsqueceuSenha = () => {
             </FuncButton>
             <LogoVitalHub />
             <Title>Recuperar senha</Title>
-            <Subtitle>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Subtitle>
+            <Text>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Text>
             <Input placeholder="Usuário ou E-mail" placeholderTextColor="#49B3BA" />
             <Button>
-                <ButtonTitle>Continuar</ButtonTitle>
+                <ButtonTitle colorText="#FFFFFF">Continuar</ButtonTitle>
             </Button>
         </Container>
     )

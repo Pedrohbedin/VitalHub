@@ -8,7 +8,7 @@ export const Container = styled.SafeAreaView`
 `
 
 export const SpacedContainer = styled.View`
-    width: 95%;
+    width: ${(props) => props.fieldWidth || "95%"};
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

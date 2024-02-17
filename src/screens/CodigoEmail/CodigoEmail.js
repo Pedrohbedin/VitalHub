@@ -3,7 +3,7 @@ import { SpacedContainer, Container } from "../../components/Container/Style"
 import { Button, FuncButton } from "../../components/Button/style"
 import { LogoVitalHub } from "../../components/Logo"
 import { ButtonTitle, Title } from "../../components/Title/style"
-import { Email, Subtitle } from "../../components/Subtitle/Subtitle"
+import { Text } from "../../components/Text/style"
 import { CodeInput } from "../../components/Input/style"
 import { useNavigation } from "@react-navigation/native"
 import { DbLink } from "../../components/Link/style"
@@ -28,8 +28,8 @@ export const CodigoEmail = () => {
             </FuncButton>
             <LogoVitalHub />
             <Title>Verifique seu e-mail</Title>
-            <Subtitle>Digite o código de 4 dígitos enviado para
-                <Email> username@email.com</Email></Subtitle>
+            <Text>Digite o código de 4 dígitos enviado para
+                <DbLink> username@email.com</DbLink></Text>
             <SpacedContainer>
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
@@ -37,7 +37,7 @@ export const CodigoEmail = () => {
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
             </SpacedContainer>
             <Button>
-                <ButtonTitle>Entrar</ButtonTitle>
+                <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
             </Button>
             <DbLink>Reenviar Código</DbLink>
         </Container>

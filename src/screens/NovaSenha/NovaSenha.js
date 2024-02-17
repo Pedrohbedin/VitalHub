@@ -3,8 +3,9 @@ import { Button, FuncButton } from "../../components/Button/style"
 import { Container } from "../../components/Container/Style"
 import { LogoVitalHub } from "../../components/Logo"
 import { Input } from "../../components/Input/style"
-import { ButtonTitle } from "../../components/Title/style"
+import { ButtonTitle, Title } from "../../components/Title/style"
 import { useNavigation } from "@react-navigation/native"
+import { Text } from "../../components/Text/style"
 
 export const NovaSenha = () => {
 
@@ -26,11 +27,14 @@ export const NovaSenha = () => {
 
             <LogoVitalHub />
 
+            <Title>Redefinir senha</Title>
+            <Text>Insira e confirme a sua nova senha</Text>
+
             <Input placeholder="Nova Senha" placeholderTextColor="#34898F" />
             <Input placeholder="Confirmar nova senha" placeholderTextColor="#34898F" />
 
             <Button>
-                <ButtonTitle>Confirmar senha nova</ButtonTitle>
+                <ButtonTitle colorText="#FFFFFF">Confirmar senha nova</ButtonTitle>
             </Button>
         </Container>
     )

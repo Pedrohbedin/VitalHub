@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Button, BorderedButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements"
 import { ContentAccount } from "../../components/ContentAccount/style";
-import { MonAlt_Sb } from "../../components/Text/style";
+import { Text } from "../../components/Text/style";
 
 export const Login = () => {
 
@@ -35,7 +35,7 @@ export const Login = () => {
                 onPress={Recuperar}>Esqueceu sua senha?</GrayLink>
 
             <Button>
-                <ButtonTitle>Entrar</ButtonTitle>
+                <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
             </Button>
 
             <BorderedButton>
@@ -49,7 +49,7 @@ export const Login = () => {
             </BorderedButton>
 
             <ContentAccount>
-                <MonAlt_Sb>Não tem conta? <LbLink onPress={Cadastrar}>Crie uma conta agora!</LbLink></MonAlt_Sb>
+                <Text fontSize="14px" fontFamily="MontserratAlternates_600SemiBold">Não tem conta? <LbLink onPress={Cadastrar}>Crie uma conta agora!</LbLink></Text>
             </ContentAccount>
         </Container>
     )
