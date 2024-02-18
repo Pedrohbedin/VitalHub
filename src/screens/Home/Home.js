@@ -28,7 +28,7 @@ export const Home = () => {
                             size={25}
                             name='bell'
                             type='material-community'
-                            color={'white'}
+                            color={'#FFFFFF'}
                         />
                     </SpacedContainer>
                 </Header>
@@ -54,15 +54,16 @@ export const Home = () => {
                                     <Text margin="0px" fieldWidth="auto">22 anos</Text>
                                     <Text margin="0px" fieldWidth="auto">Rotina</Text>
                                 </View>
-                                <Text margin="0" colorText="##49B3BA" fieldWidth="100px" textAlign="center" style={{ backgroundColor: '#E8FCFD', borderRadius: 5 }}><Icon
-                                    size={14}
-                                    name='clockcircle'
-                                    type='antdesign'
-                                    color={'#49B3BA'}
-                                /> 14:00</Text>
+                                <Text margin="0" colorText="#49B3BA" fieldWidth="100px" textAlign="center" backgroundColor="#E8FCFD" borderRadius="5px">
+                                    <Icon
+                                        size={14}
+                                        name='clockcircle'
+                                        type='antdesign'
+                                        color={'#49B3BA'}
+                                    /> 14:00</Text>
                             </View>
-                        </View> 
-                        <View style={{justifyContent: "flex-end", height: 80}}>
+                        </View>
+                        <View style={{ justifyContent: "flex-end", height: 80 }}>
                             <Text fieldWidth="auto" margin="0" fontFamily="MontserratAlternates_500Medium" colorText="#C81D25" fontSize="12px">Cancelar</Text>
                         </View>
                     </SpacedContainer>

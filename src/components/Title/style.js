@@ -1,9 +1,10 @@
+import { color } from "react-native-elements/dist/helpers";
 import styled from "styled-components";
 
 export const Title = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 20px;
-    color: ${(props) => props.colorText};
+    color: ${(props) => props.colorText || "#000000"};
     margin: ${(props) => props.margin || "10px 0px"};
 `
 

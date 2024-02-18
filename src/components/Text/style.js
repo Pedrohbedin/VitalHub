@@ -7,4 +7,6 @@ export const Text = styled.Text`
     text-align: ${(props) => props.textAlign || "center"};
     margin: ${(props) => props.margin || "0px 0px 20px 0px"};
     width: ${(props) => props.fieldWidth || "90%"};
+    background-color: ${(props) => props.backgroundColor || "transparent"};
+    border-radius: ${(props) => props.borderRadius || "0px"};
 `
