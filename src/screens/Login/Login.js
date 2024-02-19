@@ -6,7 +6,6 @@ import { GrayLink, LbLink } from "../../components/Link/style";
 import { useNavigation } from "@react-navigation/native";
 import { Button, BorderedButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements"
-import { ContentAccount } from "../../components/ContentAccount/style";
 import { Text } from "../../components/Text/style";
 
 export const Login = () => {
@@ -48,9 +47,8 @@ export const Login = () => {
                 <BorderedButtonTitle>Entrar com Google</BorderedButtonTitle>
             </BorderedButton>
 
-            <ContentAccount>
-                <Text fontSize="14px" fontFamily="MontserratAlternates_600SemiBold">Não tem conta? <LbLink onPress={Cadastrar}>Crie uma conta agora!</LbLink></Text>
-            </ContentAccount>
+            <Text margin="20px 0px" fontSize="14px" fontFamily="MontserratAlternates_600SemiBold">Não tem conta? <LbLink onPress={Cadastrar}>Crie uma conta agora!</LbLink></Text>
+
         </Container>
     )
 }
