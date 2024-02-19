@@ -2,12 +2,19 @@ import styled from "styled-components";
 
 export const Button = styled.TouchableOpacity`
     background-color: #496BBA;
-    width: 90%;
+    width: ${(props) => props.fieldWidth || "90%"};
     align-items: center;
     border-radius: 5px;
-    padding: 6px;
+    padding: ${(props) => props.padding || "6px"};
     margin: 15px 0px;
     border: 2px solid #496BBA;
+`
+
+export const BorderedButton = styled(Button)`
+    background-color: transparent;
+    justify-content: center;
+    flex-direction: row;
+    gap: 27px;
 `
 
 export const FuncButton = styled.TouchableOpacity`
@@ -20,11 +27,4 @@ export const FuncButton = styled.TouchableOpacity`
     position: fixed;
     right: 40%;
     top: 20px;
-`
-
-export const BorderedButton = styled(Button)`
-    background-color: #FAFAFA;
-    justify-content: center;
-    flex-direction: row;
-    gap: 27px;
 `

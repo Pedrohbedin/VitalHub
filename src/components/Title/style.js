@@ -6,6 +6,8 @@ export const Title = styled.Text`
     font-size: 20px;
     color: ${(props) => props.colorText || "#000000"};
     margin: ${(props) => props.margin || "10px 0px"};
+    text-align: ${(props) => props.textAlign || "center"};
+    width: ${(props) => props.fieldWidth || "auto"};
 `
 
 export const MiddleTitle = styled(Title)`
