@@ -9,4 +9,5 @@ export const Text = styled.Text`
     width: ${(props) => props.fieldWidth || "90%"};
     background-color: ${(props) => props.backgroundColor || "transparent"};
     border-radius: ${(props) => props.borderRadius || "0px"};
+    padding: ${(props) => props.padding || "0px"};
 `

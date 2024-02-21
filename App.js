@@ -10,7 +10,6 @@ import { NovaSenha } from "./src/screens/NovaSenha/NovaSenha";
 import { Cadastrar } from "./src/screens/Cadastrar/Cadastrar";
 import { Prontuario } from "./src/screens/Prontuario/Prontuario";
 import { Home } from "./src/screens/Home/Home";
-
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
 

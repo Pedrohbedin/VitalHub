@@ -1,19 +1,19 @@
 import { FlatList, SafeAreaView, View } from "react-native";
 import { Container, SpacedContainer } from "../../components/Container/Style";
 import { Header } from "../../components/Container/Style";
-import { HeaderImage, PerfilImage } from "../../components/Image/style";
+import { HeaderImage } from "../../components/Image/style";
 import { Text } from "../../components/Text/style";
-import { ButtonTitle, MiddleTitle, Title } from "../../components/Title/style";
+import { MiddleTitle } from "../../components/Title/style";
 import { Icon } from "react-native-elements";
 import CalendarList from "../../components/Calender";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
 import { useState } from "react";
 import { Card } from "../../components/Card/Card";
-import { Modal, ModalBackground } from "../../components/Modal/style";
-import { Button } from "../../components/Button/style";
-import { DbLink } from "../../components/Link/style";
-import { TouchableOpacity } from "react-native";
 import { CancelModal, ProntuarioModal } from "../../components/Modal";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Navegator } from "../../components/Navegator/Navegator";
+
+const Tab = createBottomTabNavigator();
 
 export const Home = () => {
 
@@ -60,12 +60,12 @@ export const Home = () => {
     return (
         <Container>
             <Header>
-                <SpacedContainer style={{ padding: 10 }}>
+                <SpacedContainer padding="20px">
                     <View style={{ flexDirection: "row", gap: 10 }}>
                         <HeaderImage source={{ uri: 'https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg', }} />
-                        <View style={{ gap: -20 }}>
-                            <Text textAlign="left">Bem vindo</Text>
-                            <MiddleTitle colorText="#FFFFFF" fieldWidth="auto">Dr. Claudio</MiddleTitle>
+                        <View>
+                            <Text margin="0" textAlign="left">Bem vindo</Text>
+                            <MiddleTitle margin="0" colorText="#FFFFFF" width="auto">Dr. Claudio</MiddleTitle>
                         </View>
                     </View>
                     <Icon
@@ -85,9 +85,11 @@ export const Home = () => {
             <FlatList
                 data={DATA}
                 renderItem={({ item }) => statusLista == item.situacao && <Card data={item} onAction={() => AoClicar(item)} />}
-                keyExtractor={item => item.id} />
+                keyExtractor={item => item.id}
+                showsVerticalScrollIndicator={false} />
             <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
             <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
+            <Navegator />
         </Container>
     )
 }

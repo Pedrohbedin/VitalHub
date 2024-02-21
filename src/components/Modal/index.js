@@ -13,7 +13,7 @@ export const CancelModal = ({ show = false, onAction }) => {
         <ModalBackground>
             <Modal>
                 <Title>Cancelar consulta</Title>
-                <Text fontSize="16" textAlign="center">Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</Text>
+                <Text fontSize="16px" textAlign="center">Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</Text>
                 <Button onPress={onAction}>
                     <ButtonTitle colorText="#FFFFFF">CONFIRMAR</ButtonTitle>
                 </Button>
