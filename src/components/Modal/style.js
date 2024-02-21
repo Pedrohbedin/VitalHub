@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const ModalBackground = styled.View`
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: ${(props) => props.show ? "100%" : "0%"};
-    opacity: ${(props) => props.show ? 1 : 0};
+    height: 100%;
     position: absolute;
     justify-content: center;
     align-items: center;
