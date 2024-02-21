@@ -1,7 +1,7 @@
 import { FlatList, SafeAreaView, View } from "react-native";
 import { Container, SpacedContainer } from "../../components/Container/Style";
 import { Header } from "../../components/Container/Style";
-import { HeaderImage } from "../../components/Image/style";
+import { HeaderImage, PerfilImage } from "../../components/Image/style";
 import { Text } from "../../components/Text/style";
 import { ButtonTitle, MiddleTitle, Title } from "../../components/Title/style";
 import { Icon } from "react-native-elements";
@@ -16,7 +16,8 @@ import { TouchableOpacity } from "react-native";
 
 export const Home = () => {
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false);
+    const [modalProntuario, setModalProntuario] = useState(false);
 
     const [statusLista, setStatusLista] = useState("agendadas");
 
@@ -101,6 +102,22 @@ export const Home = () => {
                     </TouchableOpacity>
                 </Modal>
             </ModalBackground>
+            <ModalBackground show={modalProntuario}>
+                <Modal>
+                    <PerfilImage border="10px" padding="30%" width="100%" source={{ uri: 'https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg' }} />
+                    <Title margin="20px 0 0 0">Niccole Sarga</Title>
+                    <View style={{ flexDirection: "row", gap: 20 }}>
+                        <Text margin="20px 0px" fieldWidth="auto">22 anos</Text>
+                        <Text margin="20px 0px" fieldWidth="auto">niccole.sarga@gmail.com</Text>
+                    </View>
+                    <Button padding="0px 0px">
+                        <ButtonTitle colorText="#FFFFFF">Inserir Prontuário</ButtonTitle>
+                    </Button>
+                    <TouchableOpacity onPress={() => setModalProntuario(false)}>
+                        <DbLink>Cancelar</DbLink>
+                    </TouchableOpacity>
+                </Modal>
+            </ModalBackground>
             <Header>
                 <SpacedContainer style={{ padding: 10 }}>
                     <View style={{ flexDirection: "row", gap: 10 }}>
@@ -126,7 +143,7 @@ export const Home = () => {
             </SpacedContainer>
             <FlatList
                 data={DATA}
-                renderItem={({ item }) => statusLista == item.situacao ? <Card statusLista={statusLista} horario={item.horario} paciente={item.paciente} idade={item.idade} tipoConsulta={item.tipoConsulta} onPress={() => setModal(true)} /> : null}
+                renderItem={({ item }) => statusLista == item.situacao ? <Card statusLista={statusLista} horario={item.horario} paciente={item.paciente} idade={item.idade} tipoConsulta={item.tipoConsulta} onPress={() => { statusLista == "agendadas" ? setModal(true) : setModalProntuario(true) }} /> : null}
                 keyExtractor={item => item.id} />
         </Container>
     )

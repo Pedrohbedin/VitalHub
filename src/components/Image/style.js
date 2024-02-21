@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const PerfilImage = styled.Image`
     width: 100%;
-    padding-top: 70%;
+    padding-top: ${(props) => props.padding || "70%"};
+    border-radius: ${(props) => props.border || "0px"};
 `
 
 export const HeaderImage = styled.Image`
