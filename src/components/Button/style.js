@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Button = styled.TouchableOpacity`
-    background-color: #496BBA;
+    background-color: ${(props) => props.fieldWidth || "#496BBA"};
     width: ${(props) => props.fieldWidth || "90%"};
     align-items: center;
     border-radius: 5px;
     padding: ${(props) => props.padding || "6px"};
     margin: 15px 0px;
-    border: 2px solid #496BBA;
+    border: 2px solid ;
+    border-color: ${(props) => props.borderColor || "#496BBA"};
 `
 
 export const BorderedButton = styled(Button)`

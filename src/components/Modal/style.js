@@ -14,12 +14,14 @@ export const Modal = styled.View`
     background-color: #FFFFFF;
     border-radius: 10px;
     position: absolute;
-    width: 95%;
-    height: 55%;
+    width: ${(props) => props.fieldWidth || "95%"};
+    height: ${(props) => props.height || "55%"};
     z-index: 2;
-    padding: 30px;
-    justify-content: space-around;
-    align-items: center;
+    padding: ${(props) => props.padding || "30px"};
+    justify-content: ${(props) => props.justify};
+    align-items: ${(props) => props.alignItems || "center"};
+    position: ${(props) => props.position || ""};
+    bottom: 0;
 `
 
 

@@ -23,7 +23,7 @@ export const Card = ({
                     <View style={{ gap: 10, flexDirection: 'row', alignItems: 'center' }}>
                         <CardImage source={{ uri: `${urlFotoPaciente}`, }} />
                         <View style={{ gap: 7, alignItems: "center", padding: 0, flexDirection: "column" }}>
-                            <Title fieldWidth="100%" textAlign="left" margin="0">{data.paciente}</Title>
+                            <Title fieldWidth="100%" textAlign="left" margin="0">{data.nome}</Title>
                             <View style={{ flexDirection: 'row', gap: 15 }}>
                                 <Text margin="0px" fieldWidth="auto">{data.idade} anos</Text>
 

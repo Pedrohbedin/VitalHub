@@ -9,7 +9,7 @@ import CalendarList from "../../components/Calender";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
 import { useState } from "react";
 import { Card } from "../../components/Card/Card";
-import { CancelModal, ProntuarioModal } from "../../components/Modal";
+import { CancelModal, ConsultaModal, ProntuarioModal } from "../../components/Modal";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Navegator } from "../../components/Navegator/Navegator";
 
@@ -20,7 +20,9 @@ export const Home = () => {
     const [statusLista, setStatusLista] = useState("agendadas");
     const [modalCancelar, setModalCancelar] = useState(false);
     const [modalProntuario, setModalProntuario] = useState(false);
+    const [modalConsulta, setModalConsulta] = useState(false);
     const [data, setData] = useState(false);
+    const [tipoConta, setTipoConta] = useState("Pa")
 
     function AoClicar(item) {
         setData(item)
@@ -31,29 +33,32 @@ export const Home = () => {
         {
             id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            paciente: 'Texto1',
+            nome: 'Paciente',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
-            situacao: 'canceladas'
+            situacao: 'canceladas',
+            tipoConta: "Dr"
         },
         {
             id: 'bd8acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            paciente: 'Texto2',
+            nome: 'Doutor',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
-            situacao: 'agendadas'
+            situacao: 'agendadas',
+            tipoConta: "Dr"
         },
         {
             id: 'bd9acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            paciente: 'Texto3',
+            nome: 'Paciente',
             idade: '18',
             email: 'teste@gmail.com',
             tipoConsulta: 'Urgente',
-            situacao: 'realizadas'
+            situacao: 'realizadas',
+            tipoConta: "Pa"
         },
     ];
 
@@ -84,12 +89,14 @@ export const Home = () => {
             </SpacedContainer>
             <FlatList
                 data={DATA}
-                renderItem={({ item }) => statusLista == item.situacao && <Card data={item} onAction={() => AoClicar(item)} />}
+                renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
             <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
             <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
-            <Navegator />
+            <ConsultaModal show={modalConsulta} onAction={() => setModalConsulta(false)} />
+    {/* Navigation Home */}
+            <Navegator tipoConta={tipoConta} onAction={() => setModalConsulta(!modalConsulta)} visible={!modalConsulta}/>
         </Container>
     )
 }

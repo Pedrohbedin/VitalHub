@@ -4,13 +4,14 @@ export const Footer = styled.View`
     width: 100%;
     height: ${(props) => props.height || "75px"};
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: ${(props) => props.JustifyContent || "space-around"};
     align-items: center;
-    elevation: 20;
-    z-index: 1;
+    elevation: ${(props) => props.tipoConta == "Dr" ? "20" : "0"};
+    z-index: 0;
     position: absolute;
     bottom: 0;
-    background-color: #FFFFFF;
+    background-color: ${(props) => props.tipoConta == "Dr" ? "#FFFFFF" : "transparent"};
+    padding: ${(props) => props.padding || "0px"}
 `;
 
 export const FooterButton = styled.TouchableOpacity`
