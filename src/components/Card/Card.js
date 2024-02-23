@@ -1,12 +1,10 @@
 import { View } from "react-native"
 import { CardContainer, SpacedContainer } from "../Container/Style"
-import { CardImage } from "../Image/style"
+import { CardImage, PerfilImage } from "../Image/style"
 import { Title } from "../Title/style"
 import { Text } from "../Text/style"
 import { Icon } from "react-native-elements"
 import { TouchableOpacity } from "react-native"
-import { CancelModal, ProntuarioModal } from "../Modal"
-import { useState } from "react"
 
 export const Card = ({
     data,
@@ -52,6 +50,47 @@ export const Card = ({
                 </SpacedContainer>
             </CardContainer>
         </>
+    )
+}
+
+export function CardClinica({ data }) {
+    return (
+        <CardContainer style={{
+            marginVertical: 20,
+            marginHorizontal: 20
+        }} flexDirection="row">
+            <View style={{ flex: 1, justifyContent: "flex-start" }}>
+                <Title textAlign="left">{data.nome}</Title>
+                <Text textAlign="left">{data.local}</Text>
+            </View>
+            <View>
+                <Text fieldWidth="auto" textAlign="right" fontFamily="Quicksand_600SemiBold" colorText="#F9A620">
+                    <Icon size={14} name='star' type='antdesign'
+                        color={"#F9A620"}
+                    /> {data.nota}</Text>
+                <Text borderRadius="5px" padding="5px" fieldWidth="auto" backgroundColor="#E8FCFD" colorText="#49B3BA" fontFamily="Quicksand_600SemiBold">
+                    <Icon size={14} name='calendar' type='antdesign'
+                        color={"#49B3BA"}
+                    /> {data.dias}</Text>
+            </View>
+        </CardContainer >
+    )
+}
+
+export function CardMedico({ data, urlFotoPaciente = "https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg" }) {
+    return (
+        <CardContainer style={{
+            marginVertical: 20,
+            marginHorizontal: 20
+        }} flexDirection="row">
+            <View style={{ flex: 1 }}>
+                <CardImage source={{ uri: `${urlFotoPaciente}`, }} />
+            </View>
+            <View style={{ flex: 2 }}>
+                <Title textAlign="left" fieldWidth="auto">Dra Alessandra</Title>
+                <Text textAlign="left" colorText="#8C8A97"  fieldWidth="auto" fontFamily="Quicksand_600SemiBold">Demartologa, Esteticista</Text>
+            </View>
+        </CardContainer >
     )
 }
 

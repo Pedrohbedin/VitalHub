@@ -12,6 +12,9 @@ import { Prontuario } from "./src/screens/Prontuario/Prontuario";
 import { Home } from "./src/screens/Home/Home";
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
+import { Clinica } from "./src/screens/Seletores/Clinica/Clinica";
+import { Medico } from "./src/screens/Seletores/Medico/Medico";
+import { DataPage } from "./src/screens/Seletores/Data/Data";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +45,9 @@ export default function App() {
         <Stack.Screen name="Perfil" component={Perfil} options={{ title: "Perfil" }} />
         <Stack.Screen name="Prontuario" component={Prontuario} options={{ title: "Prontuario" }} />
         <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
+        <Stack.Screen name="Clinica" component={Clinica} options={{ title: "Clinica" }} />
+        <Stack.Screen name="Medico" component={Medico} options={{ title: "Medico" }} />
+        <Stack.Screen name="Data" component={DataPage} options={{ title: "Data" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
