@@ -5,14 +5,15 @@ import { Text } from "../../../components/Text/style";
 import { ButtonTitle, Title } from "../../../components/Title/style";
 import CalendarComponent from "../../../components/Calender";
 import InputSelect from "../../../components/SelectInput/SelectInput";
+import { View } from "react-native";
 
 export function DataPage() {
     return (
         <Container>
-            <Title>Selecionar data</Title>
-
-            <Text>Selecione um horário disponível</Text>
-            <CalendarComponent />
+            <Title style={{marginTop: 72}}>Selecionar data</Title>
+            <View style={{height: 350}}>
+                <CalendarComponent />
+            </View>
             <InputSelect />
             <Button>
                 <ButtonTitle colorText="#FFFFFF">Confirmar</ButtonTitle>

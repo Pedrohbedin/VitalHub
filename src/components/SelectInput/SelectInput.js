@@ -3,19 +3,22 @@ import { StyleSheet, View } from "react-native";
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { Text } from "../Text/style";
 
 const InputSelect = () => {
   return (
-    <View style={{ width : 316 }}>
+    <View style={{ width: "90%", marginTop: 30, marginBottom: 42 }}>
+      <Text textAlign="left" colorText="#000000" fontFamily=" Quicksand_600SemiBold">Selecione um horário disponível</Text>
       <RNPickerSelect
         style={style}
+        useNativeAndroidPickerStyle={false}
         Icon={() => {
-          return <FontAwesomeIcon icon={faCaretDown} color='#34898F' size={22}/>
+          return <FontAwesomeIcon icon={faCaretDown} color='#34898F' size={22} />
         }}
         placeholder={{
-          label : 'Selecione um valor',
-          value : null,
-          color : '#34898F'
+          label: 'Selecione um valor',
+          value: null,
+          color: '#34898F'
         }}
         onValueChange={(value) => console.log(value)}
         items={[
@@ -34,33 +37,33 @@ const InputSelect = () => {
 const style = StyleSheet.create({
   inputIOS: {
     fontSize: 16,
-    padding : 16,
+    padding: 16,
     borderWidth: 2,
     borderColor: '#60BFC5',
     borderRadius: 5,
     color: '#34898F',
     alignContent: 'center',
-    alignItems : 'center',
-    justifyContent : 'center',
-    fontFamily : 'MontserratAlternates_600SemiBold'
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'MontserratAlternates_600SemiBold'
   },
   inputAndroid: {
     fontSize: 16,
-    padding : 16,
+    padding: 16,
     borderWidth: 2,
     borderColor: '#60BFC5',
     borderRadius: 5,
     color: '#34898F',
     alignItems: 'center',
-    justifyContent : 'center',
-    
-    fontFamily : 'MontserratAlternates_600SemiBold'
+    justifyContent: 'center',
+
+    fontFamily: 'MontserratAlternates_600SemiBold'
   },
-  iconContainer : {
-    top : '25%',
-    marginRight : 10
+  iconContainer: {
+    top: '30%',
+    marginRight: 13
   },
-  placeholder : {
+  placeholder: {
     color: '#34898F',
   }
 })
