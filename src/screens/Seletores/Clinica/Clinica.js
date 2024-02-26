@@ -5,8 +5,22 @@ import { ButtonTitle, Title } from "../../../components/Title/style";
 import { Button } from "../../../components/Button/style";
 import { DbLink } from "../../../components/Link/style";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export function Clinica() {
+
+    const navigation = useNavigation();
+
+    const Cancelar = () => {
+
+        navigation.navigate('Main');
+    }
+
+    const Continuar = () => {
+
+        navigation.navigate('Medico');
+    }
+
     DATA = [
         {
             id: "3",
@@ -32,8 +46,8 @@ export function Clinica() {
                 renderItem={({ item }) => <CardClinica data={item} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
-            <Button><ButtonTitle colorText="white">Continuar</ButtonTitle></Button>
-            <TouchableOpacity>
+            <Button onPress={Continuar}><ButtonTitle colorText="white">Continuar</ButtonTitle></Button>
+            <TouchableOpacity onPress={Cancelar}>
                 <DbLink>Cancelar</DbLink>
             </TouchableOpacity>
         </Container>

@@ -1,19 +1,16 @@
-import { FlatList, SafeAreaView, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { Container, SpacedContainer } from "../../components/Container/Style";
 import { Header } from "../../components/Container/Style";
 import { HeaderImage } from "../../components/Image/style";
 import { Text } from "../../components/Text/style";
 import { MiddleTitle } from "../../components/Title/style";
 import { Icon } from "react-native-elements";
-import CalendarList from "../../components/Calender";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
 import { useState } from "react";
 import { Card } from "../../components/Card/Card";
-import { CancelModal, ConsultaModal, ProntuarioModal } from "../../components/Modal";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
-
-const Tab = createBottomTabNavigator();
+import { Calendario } from "../../components/CalendarioHome";
 
 export const Home = () => {
 
@@ -21,8 +18,10 @@ export const Home = () => {
     const [modalCancelar, setModalCancelar] = useState(false);
     const [modalProntuario, setModalProntuario] = useState(false);
     const [modalConsulta, setModalConsulta] = useState(false);
+    const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
-    const [tipoConta, setTipoConta] = useState("Pa")
+    const [tipoConta, setTipoConta] = useState("Pa");
+
 
     function AoClicar(item) {
         setData(item)
@@ -63,7 +62,11 @@ export const Home = () => {
     ];
 
     return (
-        <Container>
+        <>
+            <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
+            <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
+            <ConsultaModal show={ConsultaModal} onAction={() => setModalConsulta(false)} />
+            <DescModal show={modalDesc} onAction={() => setModalDesc(false)}/>
             <Header>
                 <SpacedContainer padding="20px">
                     <View style={{ flexDirection: "row", gap: 10 }}>
@@ -81,22 +84,20 @@ export const Home = () => {
                     />
                 </SpacedContainer>
             </Header>
-            <CalendarList />
-            <SpacedContainer>
-                <BtnListAppointment textButton={"Agendadas"} clickButton={statusLista === "agendadas"} onPress={() => setStatusLista("agendadas")} />
-                <BtnListAppointment textButton={"Realizadas"} clickButton={statusLista === "realizadas"} onPress={() => setStatusLista("realizadas")} />
-                <BtnListAppointment textButton={"Canceladas"} clickButton={statusLista === "canceladas"} onPress={() => setStatusLista("canceladas")} />
-            </SpacedContainer>
-            <FlatList
-                data={DATA}
-                renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} />}
-                keyExtractor={item => item.id}
-                showsVerticalScrollIndicator={false} />
-            <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
-            <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
-            <ConsultaModal show={modalConsulta} onAction={() => setModalConsulta(false)} />
-    {/* Navigation Home */}
-            <Navegator tipoConta={tipoConta} onAction={() => setModalConsulta(!modalConsulta)} visible={!modalConsulta}/>
-        </Container>
+            <Container style={{ paddingTop: 15, }}>
+                <Calendario />
+                <SpacedContainer>
+                    <BtnListAppointment textButton={"Agendadas"} clickButton={statusLista === "agendadas"} onPress={() => setStatusLista("agendadas")} />
+                    <BtnListAppointment textButton={"Realizadas"} clickButton={statusLista === "realizadas"} onPress={() => setStatusLista("realizadas")} />
+                    <BtnListAppointment textButton={"Canceladas"} clickButton={statusLista === "canceladas"} onPress={() => setStatusLista("canceladas")} />
+                </SpacedContainer>
+                <FlatList
+                    data={DATA}
+                    renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => setModalDesc(true)} />}
+                    keyExtractor={item => item.id}
+                    showsVerticalScrollIndicator={false} />
+                <Navegator tipoConta={tipoConta} onAction={() => setModalConsulta(!modalConsulta)} visible={!modalConsulta} />
+            </Container>
+        </>
     )
 }

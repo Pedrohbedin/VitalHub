@@ -2,7 +2,7 @@ import { Button, View } from "react-native"
 
 export const Navigation = ({ navigation }) => {
     return (
-        <View>
+        <View style={{paddingTop: 40}}>
             <Button
                 title="Login"
                 onPress={() => navigation.navigate("Login")}
@@ -46,6 +46,10 @@ export const Navigation = ({ navigation }) => {
             <Button
                 title="Data"
                 onPress={() => navigation.navigate("Data")}
+            />
+            <Button
+                title="Main"
+                onPress={() => navigation.navigate("Main")}
             />
         </View>
     )

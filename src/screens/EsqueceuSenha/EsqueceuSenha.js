@@ -11,6 +11,10 @@ export const EsqueceuSenha = () => {
 
     const navigation = useNavigation();
 
+    const Continuar = () => {
+        navigation.navigate('CodigoEmail')
+    }
+
     return (
         <Container>
             <FuncButton onPress={() => navigation.navigate('Login')}>
@@ -25,7 +29,7 @@ export const EsqueceuSenha = () => {
             <Title>Recuperar senha</Title>
             <Text>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Text>
             <Input placeholder="Usuário ou E-mail" placeholderTextColor="#49B3BA" />
-            <Button>
+            <Button onPress={Continuar}>
                 <ButtonTitle colorText="#FFFFFF">Continuar</ButtonTitle>
             </Button>
         </Container>

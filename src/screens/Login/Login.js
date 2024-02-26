@@ -14,12 +14,17 @@ export const Login = () => {
 
     const Recuperar = () => {
 
-        navigation.navigate('RecoverPassword');
+        navigation.navigate('EsqueceuSenha');
+    }
+
+    const Entrar = () => {
+
+        navigation.navigate('Main');
     }
 
     const Cadastrar = () => {
 
-        navigation.navigate('Singup');
+        navigation.navigate('Cadastrar');
     }
 
     return (
@@ -33,7 +38,7 @@ export const Login = () => {
             <GrayLink
                 onPress={Recuperar}>Esqueceu sua senha?</GrayLink>
 
-            <Button>
+            <Button onPress={Entrar}>
                 <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
             </Button>
 
