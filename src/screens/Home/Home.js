@@ -20,7 +20,8 @@ export const Home = () => {
     const [modalConsulta, setModalConsulta] = useState(false);
     const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
-    const [tipoConta, setTipoConta] = useState("Pa");
+    const [tipoConta, setTipoConta] = useState("Dr");
+    const [currentItem, setCurrentItem] = useState()
 
 
     function AoClicar(item) {
@@ -59,14 +60,24 @@ export const Home = () => {
             situacao: 'realizadas',
             tipoConta: "Pa"
         },
+        {
+            id: 'bd10acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            horario: '14:00',
+            nome: 'Paciente',
+            idade: '15',
+            email: 'teste@gmail.com',
+            tipoConsulta: 'Urgente',
+            situacao: 'realizadas',
+            tipoConta: "Pa"
+        },
     ];
 
     return (
         <>
             <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
+            <ConsultaModal show={modalConsulta} onAction={() => setModalConsulta(false)} />
             <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
-            <ConsultaModal show={ConsultaModal} onAction={() => setModalConsulta(false)} />
-            <DescModal show={modalDesc} onAction={() => setModalDesc(false)}/>
+            <DescModal data={currentItem} show={modalDesc} onAction={() => setModalDesc(false)} />
             <Header>
                 <SpacedContainer padding="20px">
                     <View style={{ flexDirection: "row", gap: 10 }}>
@@ -93,7 +104,10 @@ export const Home = () => {
                 </SpacedContainer>
                 <FlatList
                     data={DATA}
-                    renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => setModalDesc(true)} />}
+                    renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => {
+                        item.tipoConta === "Dr" ? setModalDesc(true) : null
+                        setCurrentItem(item)
+                    }} />}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false} />
                 <Navegator tipoConta={tipoConta} onAction={() => setModalConsulta(!modalConsulta)} visible={!modalConsulta} />

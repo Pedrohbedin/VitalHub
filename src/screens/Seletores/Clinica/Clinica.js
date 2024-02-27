@@ -6,6 +6,7 @@ import { Button } from "../../../components/Button/style";
 import { DbLink } from "../../../components/Link/style";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 export function Clinica() {
 
@@ -37,13 +38,14 @@ export function Clinica() {
             dias: "Seg-Sex"
         },
     ]
+    const [selectedId, setSelectedId] = useState("");
     return (
         <Container>
             <Title>Selecionar clínica</Title>
             <FlatList
                 style={{ width: "90%" }}
                 data={DATA}
-                renderItem={({ item }) => <CardClinica data={item} />}
+                renderItem={({ item }) => <CardClinica data={item} onPress={() => setSelectedId(item.id)} borderColor={item.id === selectedId ? '#496BBA' : '#FFFFFF'} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
             <Button onPress={Continuar}><ButtonTitle colorText="white">Continuar</ButtonTitle></Button>

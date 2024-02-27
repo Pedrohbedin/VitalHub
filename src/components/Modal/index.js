@@ -119,19 +119,24 @@ export const AgendarModal = ({ show, onAction }) => {
     )
 }
 
-export const DescModal = ({ show, onAction }) => {
+export const DescModal = ({ data, show, onAction }) => {
+    const navigation = useNavigation();
 
+    const Local = () => {
+
+        navigation.navigate('Local');
+    }
     return (
         show &&
         <ModalBackground show={show} >
             <Modal fieldWidth="95%" height="auto" justify="center">
                 <PerfilImage border="10px" padding="30%" source={{ uri: 'https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg' }} />
-                <Title>Dr. Claudio</Title>
+                <Title>{data.nome}</Title>
                 <SpacedContainer fieldWidth="70%">
                     <Text fieldWidth="auto">Cliníco geral</Text>
                     <Text fieldWidth="auto">CRM-15286</Text>
                 </SpacedContainer>
-                <Button>
+                <Button onPress={Local}>
                     <ButtonTitle colorText="#FFFFFF">
                         Ver local da consulta
                     </ButtonTitle>

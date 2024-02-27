@@ -18,19 +18,19 @@ export const Perfil = () => {
                     <Text>richard.kosta@gmail.com</Text>
                 </PerfilForm>
 
-                <MiddleTitle>Data de nascimento</MiddleTitle>
+                <MiddleTitle textAlign="left">Data de nascimento</MiddleTitle>
                 <InfoInput editable={false} />
-                <MiddleTitle>CPF</MiddleTitle>
+                <MiddleTitle textAlign="left">CPF</MiddleTitle>
                 <InfoInput editable={false} keyboardType="numeric" />
-                <MiddleTitle>Endereço</MiddleTitle>
+                <MiddleTitle textAlign="left">Endereço</MiddleTitle>
                 <InfoInput editable={false} />
                 <SpacedContainer>
                     <Container>
-                        <MiddleTitle>Cep</MiddleTitle>
+                        <MiddleTitle textAlign="left">Cep</MiddleTitle>
                         <LittleInfoInput editable={false} keyboardType="numeric" />
                     </Container>
                     <Container>
-                        <MiddleTitle>Cidade</MiddleTitle>
+                        <MiddleTitle textAlign="left">Cidade</MiddleTitle>
                         <LittleInfoInput editable={false} />
                     </Container>
                 </SpacedContainer>

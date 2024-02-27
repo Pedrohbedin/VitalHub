@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { Navigation } from "./src/screens/Navigation/Navigation";
 
 import { Login } from "./src/screens/Login/Login";
 import { EsqueceuSenha } from "./src/screens/EsqueceuSenha/EsqueceuSenha";
@@ -16,6 +15,7 @@ import { Clinica } from "./src/screens/Seletores/Clinica/Clinica";
 import { Medico } from "./src/screens/Seletores/Medico/Medico";
 import { DataPage } from "./src/screens/Seletores/Data/Data";
 import { Main } from "./src/screens/Main";
+import { Local } from "./src/screens/Local/Local";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +36,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} options={{ title: "Login" }} />
         <Stack.Screen name="EsqueceuSenha" component={EsqueceuSenha} options={{ title: "EsqueceuSenha" }} />
         <Stack.Screen name="CodigoEmail" component={CodigoEmail} options={{ title: "CodigoEmail" }} />
@@ -49,6 +49,7 @@ export default function App() {
         <Stack.Screen name="Medico" component={Medico} options={{ title: "Medico" }} />
         <Stack.Screen name="Data" component={DataPage} options={{ title: "Data" }} />
         <Stack.Screen name="Main" component={Main} options={{ title: "Main" }} />
+        <Stack.Screen name="Local" component={Local} options={{ title: "Local" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

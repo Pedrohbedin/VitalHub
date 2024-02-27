@@ -6,7 +6,13 @@ const Tab = createBottomTabNavigator();
 
 export function Main() {
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}} initialRouteName='Home'>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#607EC5",
+      }}
+      initialRouteName='Home'
+    >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Perfil" component={Perfil} />
     </Tab.Navigator>

@@ -29,9 +29,12 @@ top: 0;
 `;
 
 export const CardContainer = styled.View`
-    width: 90%;
+    width: ${(props) => props.fieldWidth || "90%"};
     elevation: 5;
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 10px;
+    border-color: ${(props) => props.borderColor || "#FFFFFF"};
+    border-width: 2px;
+    border-style: solid;
 `

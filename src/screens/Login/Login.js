@@ -38,7 +38,7 @@ export const Login = () => {
             <GrayLink
                 onPress={Recuperar}>Esqueceu sua senha?</GrayLink>
 
-            <Button onPress={Entrar}>
+            <Button onPress={Entrar}> 
                 <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
             </Button>
 

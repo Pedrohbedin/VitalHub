@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Input = styled.TextInput`
-    width: 90%;
+    width: ${(props) => props.Width || "90%"};
     padding: 6px;
     border-radius: 5px;
     border: 2px #49B3BA;
@@ -12,7 +12,7 @@ export const Input = styled.TextInput`
 `
 
 export const InfoInput = styled.TextInput`
-    width: 90%;
+    width: ${(props) => props.Width || "90%"};
     background-color: #F5F3F3;
     color: #33303E;
     padding: 14px;

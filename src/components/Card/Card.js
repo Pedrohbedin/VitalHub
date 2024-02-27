@@ -5,6 +5,7 @@ import { Title } from "../Title/style"
 import { Text } from "../Text/style"
 import { Icon } from "react-native-elements"
 import { TouchableOpacity } from "react-native"
+import { useState } from "react"
 
 export const Card = ({
     data,
@@ -13,7 +14,7 @@ export const Card = ({
     urlFotoPaciente = "https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg"
 }) => {
     return (
-        <TouchableWithoutFeedback onPress={() => onClick}>
+        <TouchableWithoutFeedback onPress={() => onClick()}>
             <CardContainer
                 style={{
                     marginVertical: 20,
@@ -55,44 +56,49 @@ export const Card = ({
     )
 }
 
-export function CardClinica({ data }) {
+export function CardClinica({ data, borderColor, onPress }) {
+
     return (
-        <CardContainer style={{
-            marginVertical: 20,
-            marginHorizontal: 20
-        }} flexDirection="row">
-            <View style={{ flex: 1, justifyContent: "flex-start" }}>
-                <Title textAlign="left">{data.nome}</Title>
-                <Text textAlign="left">{data.local}</Text>
-            </View>
-            <View>
-                <Text fieldWidth="auto" textAlign="right" fontFamily="Quicksand_600SemiBold" colorText="#F9A620">
-                    <Icon size={14} name='star' type='antdesign'
-                        color={"#F9A620"}
-                    /> {data.nota}</Text>
-                <Text borderRadius="5px" padding="5px" fieldWidth="auto" backgroundColor="#E8FCFD" colorText="#49B3BA" fontFamily="Quicksand_600SemiBold">
-                    <Icon size={14} name='calendar' type='antdesign'
-                        color={"#49B3BA"}
-                    /> {data.dias}</Text>
-            </View>
-        </CardContainer >
+        <TouchableWithoutFeedback onPress={onPress}>
+            <CardContainer borderColor={borderColor} style={{
+                marginVertical: 20,
+                marginHorizontal: 20
+            }} flexDirection="row">
+                <View style={{ flex: 1, justifyContent: "flex-start" }}>
+                    <Title textAlign="left">{data.nome}</Title>
+                    <Text textAlign="left">{data.local}</Text>
+                </View>
+                <View>
+                    <Text fieldWidth="auto" textAlign="right" fontFamily="Quicksand_600SemiBold" colorText="#F9A620">
+                        <Icon size={14} name='star' type='antdesign'
+                            color={"#F9A620"}
+                        /> {data.nota}</Text>
+                    <Text borderRadius="5px" padding="5px" fieldWidth="auto" backgroundColor="#E8FCFD" colorText="#49B3BA" fontFamily="Quicksand_600SemiBold">
+                        <Icon size={14} name='calendar' type='antdesign'
+                            color={"#49B3BA"}
+                        /> {data.dias}</Text>
+                </View>
+            </CardContainer >
+        </TouchableWithoutFeedback>
     )
 }
 
-export function CardMedico({ data, urlFotoPaciente = "https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg" }) {
+export function CardMedico({ data, borderColor, onPress, urlFotoPaciente = "https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg" }) {
     return (
-        <CardContainer style={{
-            marginVertical: 20,
-            marginHorizontal: 20
-        }} flexDirection="row">
-            <View style={{ flex: 1 }}>
-                <CardImage source={{ uri: `${urlFotoPaciente}`, }} />
-            </View>
-            <View style={{ flex: 2 }}>
-                <Title textAlign="left" fieldWidth="auto">Dra Alessandra</Title>
-                <Text textAlign="left" colorText="#8C8A97" fieldWidth="auto" fontFamily="Quicksand_600SemiBold">Demartologa, Esteticista</Text>
-            </View>
-        </CardContainer >
+        <TouchableWithoutFeedback onPress={onPress}>
+            <CardContainer borderColor={borderColor} style={{
+                marginVertical: 20,
+                marginHorizontal: 20
+            }} flexDirection="row">
+                <View style={{ flex: 1 }}>
+                    <CardImage source={{ uri: `${urlFotoPaciente}`, }} />
+                </View>
+                <View style={{ flex: 2 }}>
+                    <Title textAlign="left" fieldWidth="auto">{data.nome}</Title>
+                    <Text textAlign="left" colorText="#8C8A97" fieldWidth="auto" fontFamily="Quicksand_600SemiBold">{data.especialidade}</Text>
+                </View>
+            </CardContainer >
+        </TouchableWithoutFeedback>
     )
 }
 
