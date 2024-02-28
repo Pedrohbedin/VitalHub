@@ -16,6 +16,7 @@ import { Medico } from "./src/screens/Seletores/Medico/Medico";
 import { DataPage } from "./src/screens/Seletores/Data/Data";
 import { Main } from "./src/screens/Main";
 import { Local } from "./src/screens/Local/Local";
+import { Prescricao } from "./src/screens/Prescricao/Prescricao";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,7 @@ export default function App() {
         <Stack.Screen name="Data" component={DataPage} options={{ title: "Data" }} />
         <Stack.Screen name="Main" component={Main} options={{ title: "Main" }} />
         <Stack.Screen name="Local" component={Local} options={{ title: "Local" }} />
+        <Stack.Screen name="Prescricao" component={Prescricao} options={{ title: "Prescricao" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

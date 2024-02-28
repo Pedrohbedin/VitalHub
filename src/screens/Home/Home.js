@@ -11,6 +11,7 @@ import { Card } from "../../components/Card/Card";
 import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
 import { Calendario } from "../../components/CalendarioHome";
+import { useNavigation } from "@react-navigation/native";
 
 export const Home = () => {
 
@@ -22,7 +23,7 @@ export const Home = () => {
     const [data, setData] = useState(false);
     const [tipoConta, setTipoConta] = useState("Dr");
     const [currentItem, setCurrentItem] = useState()
-
+    const navigation = useNavigation()
 
     function AoClicar(item) {
         setData(item)
@@ -38,6 +39,16 @@ export const Home = () => {
             idade: '18',
             tipoConsulta: 'Urgente',
             situacao: 'canceladas',
+            tipoConta: "Dr"
+        },
+        {
+            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            horario: '14:00',
+            nome: 'Paciente',
+            email: 'teste@gmail.com',
+            idade: '18',
+            tipoConsulta: 'Urgente',
+            situacao: 'realizadas',
             tipoConta: "Dr"
         },
         {
@@ -105,8 +116,8 @@ export const Home = () => {
                 <FlatList
                     data={DATA}
                     renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => {
-                        item.tipoConta === "Dr" ? setModalDesc(true) : null
-                        setCurrentItem(item)
+                        item.tipoConta === "Dr" ? setModalDesc(true) : navigation.navigate("Prescricao")
+                            setCurrentItem(item)
                     }} />}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false} />
