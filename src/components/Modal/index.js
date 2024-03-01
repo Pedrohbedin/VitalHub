@@ -31,6 +31,11 @@ export const CancelModal = ({ show = false, onAction }) => {
 }
 
 export const ProntuarioModal = ({ show, data, onAction }) => {
+
+    const navigation = useNavigation();
+    const Inserir = () => {
+        navigation.navigate("Prontuario")
+    }
     return (
         show &&
         <ModalBackground show={show}>
@@ -41,7 +46,7 @@ export const ProntuarioModal = ({ show, data, onAction }) => {
                     <Text margin="20px 0px" fieldWidth="auto">{data.idade} anos</Text>
                     <Text margin="20px 0px" fieldWidth="auto">{data.email}</Text>
                 </View>
-                <Button padding="0px 0px">
+                <Button padding="0px 0px" onPress={Inserir}>
                     <ButtonTitle colorText="#FFFFFF">Inserir Prontuário</ButtonTitle>
                 </Button>
                 <TouchableOpacity onPress={onAction}>

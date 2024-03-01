@@ -21,7 +21,7 @@ export const Home = () => {
     const [modalConsulta, setModalConsulta] = useState(false);
     const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
-    const [tipoConta, setTipoConta] = useState("Dr");
+    const [tipoConta, setTipoConta] = useState("Pa");
     const [currentItem, setCurrentItem] = useState()
     const navigation = useNavigation()
 
@@ -32,29 +32,29 @@ export const Home = () => {
 
     const DATA = [
         {
-            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            id: 'bd1acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Paciente',
+            nome: 'Pedro Carlos',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
             situacao: 'canceladas',
-            tipoConta: "Dr"
+            tipoConta: "Pa"
         },
         {
-            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            id: 'bd2acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Paciente',
+            nome: 'Andre da Silva',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
             situacao: 'realizadas',
-            tipoConta: "Dr"
+            tipoConta: "Pa"
         },
         {
-            id: 'bd8acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            id: 'bd3acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Doutor',
+            nome: 'Doutor Jose ',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
@@ -62,19 +62,19 @@ export const Home = () => {
             tipoConta: "Dr"
         },
         {
-            id: 'bd9acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            id: 'bd4acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Paciente',
+            nome: 'Doutor Carlos',
             idade: '18',
             email: 'teste@gmail.com',
             tipoConsulta: 'Urgente',
             situacao: 'realizadas',
-            tipoConta: "Pa"
+            tipoConta: "Dr"
         },
         {
-            id: 'bd10acbea-c1b1-46c2-aed5-3ad53abb28ba',
+            id: 'bd5acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Paciente',
+            nome: 'Felipe Sousa',
             idade: '15',
             email: 'teste@gmail.com',
             tipoConsulta: 'Urgente',
@@ -90,12 +90,12 @@ export const Home = () => {
             <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
             <DescModal data={currentItem} show={modalDesc} onAction={() => setModalDesc(false)} />
             <Header>
-                <SpacedContainer padding="20px">
+                <SpacedContainer style={{ height: "100%" }} >
                     <View style={{ flexDirection: "row", gap: 10 }}>
                         <HeaderImage source={{ uri: 'https://thumbs.dreamstime.com/b/retrato-exterior-do-doutor-masculino-35801901.jpg', }} />
-                        <View>
-                            <Text margin="0" textAlign="left">Bem vindo</Text>
-                            <MiddleTitle margin="0" colorText="#FFFFFF" width="auto">Dr. Claudio</MiddleTitle>
+                        <View style={{ width: "70%" }}>
+                            <Text fieldwidth="100%" margin="0" textAlign="left">Bem vindo</Text>
+                            <MiddleTitle textAlign="left" margin="0" colorText="#FFFFFF" fieldwidth="100%">{tipoConta}. Claudio</MiddleTitle>
                         </View>
                     </View>
                     <Icon
@@ -117,7 +117,7 @@ export const Home = () => {
                     data={DATA}
                     renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => {
                         item.tipoConta === "Dr" ? setModalDesc(true) : navigation.navigate("Prescricao")
-                            setCurrentItem(item)
+                        setCurrentItem(item)
                     }} />}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false} />

@@ -6,8 +6,15 @@ import { Text } from "../../components/Text/style"
 import { InfoInput } from "../../components/Input/style"
 import { Button } from "../../components/Button/style"
 import { DbLink } from "../../components/Link/style"
+import { useNavigation } from "@react-navigation/native"
 
 export const Prescricao = () => {
+
+    const navigation = useNavigation();
+
+    const Voltar = () => {
+        navigation.navigate("Main")
+    }
     return (
         <ScrollView>
             <Container>
@@ -26,15 +33,19 @@ export const Prescricao = () => {
                 <MiddleTitle textAlign="left">Exames médicos</MiddleTitle>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder="Nenhuma foto informada" />
                 <SpacedContainer>
-                    <Button fieldWidth="50%">
+                    <Button style={{ flex: 1 }} >
                         <ButtonTitle colorText="#FFFFFF">Enviar</ButtonTitle>
                     </Button>
-                    <TouchableOpacity style={{ justifyContent: "center" }}>
-                        <Text fieldWidth="auto" colorText="#C81D25">Cancelar</Text>
-                    </TouchableOpacity>
+                    <View style={{flex: 1}}>
+                        <TouchableOpacity>
+                            <Text fieldWidth="auto" colorText="#C81D25">Cancelar</Text>
+                        </TouchableOpacity>
+                    </View>
                 </SpacedContainer>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder="Resultado do exame de sangue : tudo normal" />
-                <DbLink>Voltar</DbLink>
+                <TouchableOpacity onPress={Voltar}>
+                    <DbLink>Voltar</DbLink>
+                </TouchableOpacity>
             </Container>
         </ScrollView>
     )

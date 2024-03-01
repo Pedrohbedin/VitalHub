@@ -1,4 +1,3 @@
-import { color } from "react-native-elements/dist/helpers";
 import styled from "styled-components";
 
 export const Title = styled.Text`

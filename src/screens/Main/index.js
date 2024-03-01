@@ -4,7 +4,6 @@ import { Perfil } from '../Perfil/Perfil';
 import { Icon } from 'react-native-elements';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Text } from 'react-native-elements';
-import { View } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,10 +14,10 @@ export function Main() {
         tabBarStyle: {
           backgroundColor: '#FBFBFB',
           borderRadius: 10,
-          height: 60, 
+          height: 60,
           justifyContent: 'center',
           alignItems: 'center'
-      },
+        },
         tabBarActiveTintColor: "#607EC5",
         tabBarInactiveTintColor: "#4E4B59",
         tabBarHideOnKeyboard: true,
