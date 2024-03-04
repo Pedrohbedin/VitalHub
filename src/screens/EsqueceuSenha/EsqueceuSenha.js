@@ -30,7 +30,7 @@ export const EsqueceuSenha = () => {
             <Text>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Text>
             <Input placeholder="Usuário ou E-mail" placeholderTextColor="#49B3BA" />
             <Button onPress={Continuar}>
-                <ButtonTitle colorText="#FFFFFF">Continuar</ButtonTitle>
+                <ButtonTitle>Continuar</ButtonTitle>
             </Button>
         </Container>
     )

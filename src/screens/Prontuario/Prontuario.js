@@ -6,8 +6,16 @@ import { Text } from "../../components/Text/style";
 import { ButtonTitle, MiddleTitle, Title } from "../../components/Title/style";
 import { Button } from "../../components/Button/style";
 import { DbLink } from "../../components/Link/style";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export const Prontuario = () => {
+    const navigation = useNavigation();
+
+    const Cancelar = () => {
+
+        navigation.navigate('Main');
+    }
     return (
         <ScrollView>
             <Container>
@@ -18,18 +26,20 @@ export const Prontuario = () => {
                     <Text fieldWidth="auto">richard.kosta@gmail.com</Text>
                 </SpacedContainer>
                 <MiddleTitle>Descrição da consulta</MiddleTitle>
-                <InfoInput multiline numberOfLines={5} placeholder="Descrição" style={{ textAlignVertical: 'top' }}></InfoInput>
+                <InfoInput multiline numberOfLines={5} placeholder="Descrição" style={{ textAlignVertical: 'top' }} />
                 <MiddleTitle>Diagnóstico do paciente</MiddleTitle>
-                <InfoInput placeholder="Diagnóstico" ></InfoInput>
+                <InfoInput placeholder="Diagnóstico" />
                 <MiddleTitle>Prescrição médica</MiddleTitle>
-                <InfoInput multiline numberOfLines={5} placeholder="Prescrição medica" style={{ textAlignVertical: 'top' }}></InfoInput>
+                <InfoInput multiline numberOfLines={5} placeholder="Prescrição medica" style={{ textAlignVertical: 'top' }} />
                 <Button>
-                    <ButtonTitle colorText="#FFFFFF">Salvar</ButtonTitle>
+                    <ButtonTitle>Salvar</ButtonTitle>
                 </Button>
                 <Button>
-                    <ButtonTitle colorText="#FFFFFF">Editar</ButtonTitle>
+                    <ButtonTitle>Editar</ButtonTitle>
                 </Button>
-                <DbLink>Cancelar</DbLink>
+                <TouchableOpacity onPress={Cancelar}>
+                    <DbLink>Cancelar</DbLink>
+                </TouchableOpacity>
             </Container>
         </ScrollView>
     )

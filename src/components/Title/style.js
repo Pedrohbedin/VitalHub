@@ -15,6 +15,7 @@ width: 90%;
 `
 
 export const ButtonTitle = styled(Title)`
+    color: #FFFFFF;
     font-family: 'MontserratAlternates_700Bold';
     padding: 12px 0px;
     margin: 0px;

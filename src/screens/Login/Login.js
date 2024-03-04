@@ -39,7 +39,7 @@ export const Login = () => {
                 onPress={Recuperar}>Esqueceu sua senha?</GrayLink>
 
             <Button onPress={Entrar}> 
-                <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
+                <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 
             <BorderedButton>

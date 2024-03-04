@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Card } from "../../components/Card/Card";
 import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
-import { Calendario } from "../../components/CalendarioHome";
+import { HomeCalendarComponent } from "../../components/Calender";
 import { useNavigation } from "@react-navigation/native";
 
 export const Home = () => {
@@ -21,7 +21,7 @@ export const Home = () => {
     const [modalConsulta, setModalConsulta] = useState(false);
     const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
-    const [tipoConta, setTipoConta] = useState("Pa");
+    const [tipoConta] = useState("Dr");
     const [currentItem, setCurrentItem] = useState()
     const navigation = useNavigation()
 
@@ -44,7 +44,7 @@ export const Home = () => {
         {
             id: 'bd2acbea-c1b1-46c2-aed5-3ad53abb28ba',
             horario: '14:00',
-            nome: 'Andre da Silva',
+            nome: 'Andre Silva',
             email: 'teste@gmail.com',
             idade: '18',
             tipoConsulta: 'Urgente',
@@ -107,7 +107,7 @@ export const Home = () => {
                 </SpacedContainer>
             </Header>
             <Container style={{ paddingTop: 15, }}>
-                <Calendario />
+                <HomeCalendarComponent />
                 <SpacedContainer>
                     <BtnListAppointment textButton={"Agendadas"} clickButton={statusLista === "agendadas"} onPress={() => setStatusLista("agendadas")} />
                     <BtnListAppointment textButton={"Realizadas"} clickButton={statusLista === "realizadas"} onPress={() => setStatusLista("realizadas")} />
@@ -116,7 +116,7 @@ export const Home = () => {
                 <FlatList
                     data={DATA}
                     renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => {
-                        item.tipoConta === "Dr" ? setModalDesc(true) : navigation.navigate("Prescricao")
+                        item.tipoConta === "Dr" ? setModalDesc(true) : null
                         setCurrentItem(item)
                     }} />}
                     keyExtractor={item => item.id}

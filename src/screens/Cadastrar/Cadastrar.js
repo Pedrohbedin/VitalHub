@@ -6,11 +6,12 @@ import { LogoVitalHub } from "../../components/Logo"
 import { Text } from "../../components/Text/style"
 import { ButtonTitle, Title } from "../../components/Title/style"
 import { useNavigation } from "@react-navigation/native"
+import React from "react"
 
 export const Cadastrar = () => {
 
     const navigation = useNavigation();
-    
+
     return (
         <Container>
             <LogoVitalHub />
@@ -24,7 +25,7 @@ export const Cadastrar = () => {
             <Input placeholder="Confirmar Senha" placeholderTextColor="#49B3BA" />
 
             <Button>
-                <ButtonTitle colorText="#FFFFFF">CADASTRAR</ButtonTitle>
+                <ButtonTitle>CADASTRAR</ButtonTitle>
             </Button>
             <DbLink onPress={() => navigation.navigate("Login")}>Cancelar</DbLink>
         </Container>

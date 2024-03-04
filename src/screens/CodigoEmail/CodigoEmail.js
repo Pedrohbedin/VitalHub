@@ -13,7 +13,7 @@ export const CodigoEmail = () => {
     const navigation = useNavigation()
     const onPress = () => {
 
-        navigation.navigate('RecoverPassword');
+        navigation.navigate('Login');
     }
     const Entrar = () => {
 
@@ -41,7 +41,7 @@ export const CodigoEmail = () => {
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
             </SpacedContainer>
             <Button onPress={Entrar}>
-                <ButtonTitle colorText="#FFFFFF">Entrar</ButtonTitle>
+                <ButtonTitle>Entrar</ButtonTitle>
             </Button>
             <DbLink>Reenviar Código</DbLink>
         </Container>

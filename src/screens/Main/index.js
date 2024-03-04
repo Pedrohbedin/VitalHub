@@ -33,16 +33,18 @@ export function Main() {
       detachInactiveScreens={true}
     >
       <Tab.Screen name="Home" component={Home} options={{
-        tabBarLabel: ({ focused, size }) => focused ? null : <Text style={{ fontSize: size, color: "#4E4B59", fontFamily: "Quicksand_500Medium" }}>Agenda</Text>,
-        tabBarIcon: ({ focused, color, size }) => (
-          <Icon style={{ backgroundColor: focused ? "#ECF2FF" : "transparent", borderRadius: 25, width: 50, height: 50, justifyContent: 'center', alignItems: 'center' }} type="feather" name="calendar" color={color} size={size} />
+        tabBarLabelPosition: 'beside-icon',
+        tabBarLabel: ({ focused, size }) => focused ? <Text style={{ fontSize: size, color: "#607EC5", fontFamily: "Quicksand_500Medium", margin: 20, backgroundColor: "#ECF2FF" }}>Agenda</Text> : null,
+        tabBarIcon: ({ color, size }) => (
+          <Icon style={{ borderRadius: 25, width: 50, height: 50, justifyContent: 'center', alignItems: 'center' }} type="feather" name="calendar" color={color} size={size} />
         ),
       }} />
       <Tab.Screen name="Perfil" component={Perfil} options={{
-        tabBarLabel: ({ focused, size }) => focused ? null : <Text style={{ fontSize: size, color: "#4E4B59", fontFamily: "Quicksand_500Medium" }}>Home</Text>,
-        tabBarIcon: ({ focused, color }) => (
-          <Ionicons style={{ backgroundColor: focused ? "#ECF2FF" : "transparent", borderRadius: 25, width: 50, height: 50, justifyContent: 'center', alignItems: 'center', textAlign: 'center', textAlignVertical: 'center' }} name="person-circle-outline" color={color} size={29} />
-        ),
+        tabBarLabelPosition: 'beside-icon',
+        tabBarLabel: ({ focused, size }) => focused ? <Text style={{ fontSize: size, color: "#607EC5", fontFamily: "Quicksand_500Medium", margin: 20, backgroundColor: "#ECF2FF" }}>Perfil</Text> : null,
+        tabBarIcon: ({ color }) => (
+          <Ionicons style={{ borderRadius: 25, width: 50, height: 50, justifyContent: 'center', alignItems: 'center', textAlign: 'center', textAlignVertical: 'center' }} name="person-circle-outline" color={color} size={29} />
+        )
       }} />
     </Tab.Navigator >
   );
