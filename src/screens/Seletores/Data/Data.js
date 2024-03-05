@@ -8,11 +8,8 @@ import { View } from "react-native";
 import { useState } from "react";
 import { AgendarModal } from "../../../components/Modal";
 import { TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
-export function DataPage() {
-
-    const navigation = useNavigation();
+export function DataPage({ navigation }) {
 
     const Cancelar = () => {
 

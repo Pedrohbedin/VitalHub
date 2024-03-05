@@ -5,10 +5,9 @@ import { Text } from "../../components/Text/style"
 import { Title } from "../../components/Title/style"
 import { TouchableOpacity } from "react-native"
 import { DbLink } from "../../components/Link/style"
-import { useNavigation } from "@react-navigation/native"
 
-export const Local = () => {
-    const navigation = useNavigation()
+export const Local = ({ navigation }) => {
+
     const Cancelar = () => {
 
         navigation.navigate('Main');

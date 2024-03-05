@@ -9,14 +9,15 @@ import { NovaSenha } from "./src/screens/NovaSenha/NovaSenha";
 import { Cadastrar } from "./src/screens/Cadastrar/Cadastrar";
 import { Prontuario } from "./src/screens/Prontuario/Prontuario";
 import { Home } from "./src/screens/Home/Home";
-import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
-import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
 import { Clinica } from "./src/screens/Seletores/Clinica/Clinica";
 import { Medico } from "./src/screens/Seletores/Medico/Medico";
 import { DataPage } from "./src/screens/Seletores/Data/Data";
-import { Main } from "./src/screens/Main";
+import { Main } from "./src/screens/Main/Main";
 import { Local } from "./src/screens/Local/Local";
 import { Prescricao } from "./src/screens/Prescricao/Prescricao";
+
+import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
+import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,6 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
-
 
   return (
     <NavigationContainer>

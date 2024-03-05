@@ -3,14 +3,11 @@ import { Title, ButtonTitle, BorderedButtonTitle } from "../../components/Title/
 import { LogoVitalHub } from "../../components/Logo";
 import { Input } from "../../components/Input/style";
 import { GrayLink, LbLink } from "../../components/Link/style";
-import { useNavigation } from "@react-navigation/native";
 import { Button, BorderedButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements"
 import { Text } from "../../components/Text/style";
 
-export const Login = () => {
-
-    const navigation = useNavigation();
+export const Login = ({ navigation }) => {
 
     const Recuperar = () => {
 
@@ -38,7 +35,7 @@ export const Login = () => {
             <GrayLink
                 onPress={Recuperar}>Esqueceu sua senha?</GrayLink>
 
-            <Button onPress={Entrar}> 
+            <Button onPress={Entrar}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 

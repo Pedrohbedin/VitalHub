@@ -4,12 +4,9 @@ import { Button } from "../../../components/Button/style"
 import { DbLink } from "../../../components/Link/style"
 import { Container } from "../../../components/Container/Style"
 import { CardMedico } from "../../../components/Card/Card"
-import { useNavigation } from "@react-navigation/native"
 import { useState } from "react"
 
-export function Medico() {
-
-    const navigation = useNavigation();
+export function Medico({ navigation }) {
 
     const Cancelar = () => {
 

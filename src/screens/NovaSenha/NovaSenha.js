@@ -4,12 +4,10 @@ import { Container } from "../../components/Container/Style"
 import { LogoVitalHub } from "../../components/Logo"
 import { Input } from "../../components/Input/style"
 import { ButtonTitle, Title } from "../../components/Title/style"
-import { useNavigation } from "@react-navigation/native"
 import { Text } from "../../components/Text/style"
 
-export const NovaSenha = () => {
+export const NovaSenha = ({ navigation }) => {
 
-    const navigation = useNavigation();
     const onPress = () => {
 
         navigation.navigate('Login');

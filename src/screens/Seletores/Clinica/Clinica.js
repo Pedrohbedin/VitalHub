@@ -5,12 +5,9 @@ import { ButtonTitle, Title } from "../../../components/Title/style";
 import { Button } from "../../../components/Button/style";
 import { DbLink } from "../../../components/Link/style";
 import { TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
-export function Clinica() {
-
-    const navigation = useNavigation();
+export function Clinica({ navigation }) {
 
     const Cancelar = () => {
 

@@ -4,12 +4,9 @@ import { ButtonTitle, Title } from "../../components/Title/style"
 import { Input } from "../../components/Input/style";
 import { Button, FuncButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements";
-import { useNavigation } from "@react-navigation/native";
 import { Text } from "../../components/Text/style";
 
-export const EsqueceuSenha = () => {
-
-    const navigation = useNavigation();
+export const EsqueceuSenha = ({ navigation }) => {
 
     const Continuar = () => {
         navigation.navigate('CodigoEmail')

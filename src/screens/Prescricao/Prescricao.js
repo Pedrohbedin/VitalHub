@@ -6,11 +6,8 @@ import { Text } from "../../components/Text/style"
 import { InfoInput } from "../../components/Input/style"
 import { Button } from "../../components/Button/style"
 import { DbLink } from "../../components/Link/style"
-import { useNavigation } from "@react-navigation/native"
 
-export const Prescricao = () => {
-
-    const navigation = useNavigation();
+export const Prescricao = ({ navigation }) => {
 
     const Voltar = () => {
         navigation.navigate("Main")
@@ -36,7 +33,7 @@ export const Prescricao = () => {
                     <Button style={{ flex: 1 }} >
                         <ButtonTitle colorText="#FFFFFF">Enviar</ButtonTitle>
                     </Button>
-                    <View style={{flex: 1}}>
+                    <View style={{ flex: 1 }}>
                         <TouchableOpacity>
                             <Text fieldWidth="auto" colorText="#C81D25">Cancelar</Text>
                         </TouchableOpacity>

@@ -11,9 +11,8 @@ import { Card } from "../../components/Card/Card";
 import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
 import { HomeCalendarComponent } from "../../components/Calender";
-import { useNavigation } from "@react-navigation/native";
 
-export const Home = () => {
+export const Home = ({ navigation }) => {
 
     const [statusLista, setStatusLista] = useState("agendadas");
     const [modalCancelar, setModalCancelar] = useState(false);
@@ -23,7 +22,6 @@ export const Home = () => {
     const [data, setData] = useState(false);
     const [tipoConta] = useState("Dr");
     const [currentItem, setCurrentItem] = useState()
-    const navigation = useNavigation()
 
     function AoClicar(item) {
         setData(item)

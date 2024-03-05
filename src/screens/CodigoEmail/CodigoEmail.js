@@ -5,12 +5,10 @@ import { LogoVitalHub } from "../../components/Logo"
 import { ButtonTitle, Title } from "../../components/Title/style"
 import { Text } from "../../components/Text/style"
 import { CodeInput } from "../../components/Input/style"
-import { useNavigation } from "@react-navigation/native"
 import { DbLink } from "../../components/Link/style"
 
-export const CodigoEmail = () => {
+export const CodigoEmail = ({ navigation }) => {
 
-    const navigation = useNavigation()
     const onPress = () => {
 
         navigation.navigate('Login');

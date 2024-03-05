@@ -7,10 +7,8 @@ import { ButtonTitle, MiddleTitle, Title } from "../../components/Title/style";
 import { Button } from "../../components/Button/style";
 import { DbLink } from "../../components/Link/style";
 import { TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
-export const Prontuario = () => {
-    const navigation = useNavigation();
+export const Prontuario = ({ navigation }) => {
 
     const Cancelar = () => {
 
