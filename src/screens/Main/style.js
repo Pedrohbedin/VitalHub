@@ -4,7 +4,7 @@ export const ContentIcon = styled.View.attrs({
     focus: true
 })`
     flex-direction: row;
-    background-color: ${props => `${props.tabBarActiveBackgroundColor}`};
+    background-color: ${(props) => `${props.tabBarActiveBackgroundColor}`};
 
     gap: 5px;
     border-radius: 18px;

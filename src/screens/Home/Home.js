@@ -12,7 +12,7 @@ import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../co
 import { Navegator } from "../../components/Navegator/Navegator";
 import { HomeCalendarComponent } from "../../components/Calender";
 
-export const Home = ({ navigation }) => {
+export function Home() {
 
     const [statusLista, setStatusLista] = useState("agendadas");
     const [modalCancelar, setModalCancelar] = useState(false);
@@ -20,7 +20,7 @@ export const Home = ({ navigation }) => {
     const [modalConsulta, setModalConsulta] = useState(false);
     const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
-    const [tipoConta] = useState("Dr");
+    const [tipoConta] = useState("Pa");
     const [currentItem, setCurrentItem] = useState()
 
     function AoClicar(item) {
@@ -100,11 +100,11 @@ export const Home = ({ navigation }) => {
                         size={25}
                         name='bell'
                         type='material-community'
-                        color={'#FFFFFF'}
+                        color='white'
                     />
                 </SpacedContainer>
             </Header>
-            <Container style={{ paddingTop: 15, }}>
+            <Container style={{ paddingTop: 15 }}>
                 <HomeCalendarComponent />
                 <SpacedContainer>
                     <BtnListAppointment textButton={"Agendadas"} clickButton={statusLista === "agendadas"} onPress={() => setStatusLista("agendadas")} />

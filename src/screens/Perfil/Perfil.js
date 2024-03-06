@@ -7,7 +7,7 @@ import { Button } from "../../components/Button/style"
 import { ScrollView } from "react-native"
 import { Text } from "../../components/Text/style"
 
-export const Perfil = () => {
+export function Perfil() {
     return (
         <ScrollView>
             <Container>

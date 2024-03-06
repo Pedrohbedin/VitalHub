@@ -7,20 +7,11 @@ import { Text } from "../../components/Text/style"
 import { CodeInput } from "../../components/Input/style"
 import { DbLink } from "../../components/Link/style"
 
-export const CodigoEmail = ({ navigation }) => {
-
-    const onPress = () => {
-
-        navigation.navigate('Login');
-    }
-    const Entrar = () => {
-
-        navigation.navigate('Main');
-    }
+export function CodigoEmail({ navigation }) {
 
     return (
         <Container>
-            <FuncButton onPress={onPress}>
+            <FuncButton onPress={() => navigation.navigate('Login')}>
                 <Icon
                     color="#34898F"
                     size={30}
@@ -31,17 +22,17 @@ export const CodigoEmail = ({ navigation }) => {
             <LogoVitalHub />
             <Title>Verifique seu e-mail</Title>
             <Text>Digite o código de 4 dígitos enviado para
-                <DbLink> username@email.com</DbLink></Text>
+                <DbLink>username@email.com</DbLink></Text>
             <SpacedContainer>
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
                 <CodeInput maxLength={1} placeholder="0" placeholderTextColor="#34898F" />
             </SpacedContainer>
-            <Button onPress={Entrar}>
+            <Button onPress={() => navigation.navigate('Main')}>
                 <ButtonTitle>Entrar</ButtonTitle>
             </Button>
             <DbLink>Reenviar Código</DbLink>
-        </Container>
+        </Container >
     )
 }

@@ -8,12 +8,7 @@ import { Button } from "../../components/Button/style";
 import { DbLink } from "../../components/Link/style";
 import { TouchableOpacity } from "react-native";
 
-export const Prontuario = ({ navigation }) => {
-
-    const Cancelar = () => {
-
-        navigation.navigate('Main');
-    }
+export function Prontuario({ navigation }) {
     return (
         <ScrollView>
             <Container>
@@ -35,7 +30,7 @@ export const Prontuario = ({ navigation }) => {
                 <Button>
                     <ButtonTitle>Editar</ButtonTitle>
                 </Button>
-                <TouchableOpacity onPress={Cancelar}>
+                <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <DbLink>Cancelar</DbLink>
                 </TouchableOpacity>
             </Container>

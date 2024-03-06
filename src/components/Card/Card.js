@@ -44,8 +44,7 @@ export const Card = ({
                             <Text fieldWidth="auto" margin="0" fontFamily="MontserratAlternates_500Medium" colorText={data.situacao == "agendadas" ? "#C81D25" : "#344F8F"} fontSize="12px">
                                 {
                                     data.situacao == "agendadas" ? "Cancelar" :
-                                        data.situacao == "realizadas" ? "Ver prontuário" :
-                                            ""
+                                        data.situacao == "realizadas" && data.tipoConta == "Dr" ?  "" : "Ver prontuário"
                                 }
                             </Text>
                         </TouchableOpacity>

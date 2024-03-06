@@ -6,12 +6,7 @@ import { Title } from "../../components/Title/style"
 import { TouchableOpacity } from "react-native"
 import { DbLink } from "../../components/Link/style"
 
-export const Local = ({ navigation }) => {
-
-    const Cancelar = () => {
-
-        navigation.navigate('Main');
-    }
+export function Local({ navigation }) {
     return (
         <Container>
             <View style={{ backgroundColor: "#EFEFEF", width: "100%", paddingTop: "100%" }}>
@@ -32,10 +27,10 @@ export const Local = ({ navigation }) => {
                 </View>
             </View>
             <View style={{ marginTop: 40 }}>
-                <TouchableOpacity onPress={Cancelar}>
+                <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <DbLink>Cancelar</DbLink>
                 </TouchableOpacity>
             </View>
-        </Container>
+        </Container >
     )
 }

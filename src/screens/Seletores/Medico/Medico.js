@@ -8,16 +8,8 @@ import { useState } from "react"
 
 export function Medico({ navigation }) {
 
-    const Cancelar = () => {
-
-        navigation.navigate('Clinica');
-    }
-
-    const Continuar = () => {
-
-        navigation.navigate('Data');
-    }
-
+    const [selectedId, setSelectedId] = useState("");
+    
     DATA = [
         {
             id: "3",
@@ -30,7 +22,6 @@ export function Medico({ navigation }) {
             especialidade: "teste, sla"
         },
     ]
-    const [selectedId, setSelectedId] = useState("");
     return (
         <Container>
             <Title>Selecionar médico</Title>
@@ -40,8 +31,10 @@ export function Medico({ navigation }) {
                 renderItem={({ item }) => <CardMedico data={item} onPress={() => setSelectedId(item.id)} borderColor={item.id === selectedId ? '#496BBA' : '#FFFFFF'} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
-            <Button onPress={Continuar}><ButtonTitle colorText="white">Continuar</ButtonTitle></Button>
-            <TouchableOpacity onPress={Cancelar}>
+            <Button onPress={() => navigation.navigate('Data')}>
+                <ButtonTitle colorText="white">Continuar</ButtonTitle>
+            </Button>
+            <TouchableOpacity onPress={() => navigation.navigate('Clinica')}>
                 <DbLink>Cancelar</DbLink>
             </TouchableOpacity>
         </Container>

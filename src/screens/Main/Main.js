@@ -4,11 +4,11 @@ import { Perfil } from '../Perfil/Perfil';
 import { ContentIcon, TextIcon } from './style';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
-const Tab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator();
 
 export function Main() {
   return (
-    <Tab.Navigator
+    <BottomTab.Navigator
       screenOptions={({ route }) => ({
         tabBarStyle: { backgroundColor: '#FFFFFF', height: 80 },
         tabBarActiveBackgroundColor: "transparent",
@@ -37,8 +37,8 @@ export function Main() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Perfil" component={Perfil} />
-    </Tab.Navigator >
+      <BottomTab.Screen name="Home" component={Home} />
+      <BottomTab.Screen name="Perfil" component={Perfil} />
+    </BottomTab.Navigator >
   );
 }

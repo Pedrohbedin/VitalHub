@@ -10,24 +10,13 @@ import { AgendarModal } from "../../../components/Modal";
 import { TouchableOpacity } from "react-native";
 
 export function DataPage({ navigation }) {
-
-    const Cancelar = () => {
-
-        navigation.navigate('Medico');
-    }
-
-    const Confirmar = () => {
-
-        navigation.navigate('Main');
-    }
-
     const [modal, setModal] = useState(false)
 
     return (
         <>
             <AgendarModal show={modal} onAction={() => {
                 setModal(false);
-                Confirmar();
+                navigation.navigate('Main')
             }} />
             <Container>
                 <Title>Selecionar data</Title>
@@ -38,7 +27,7 @@ export function DataPage({ navigation }) {
                 <Button onPress={() => setModal(true)}>
                     <ButtonTitle colorText="#FFFFFF">Confirmar</ButtonTitle>
                 </Button>
-                <TouchableOpacity onPress={Cancelar}>
+                <TouchableOpacity onPress={() => navigation.navigate('Medico')}>
                     <DbLink>Cancelar</DbLink>
                 </TouchableOpacity>
             </Container>

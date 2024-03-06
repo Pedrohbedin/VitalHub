@@ -7,11 +7,7 @@ import { InfoInput } from "../../components/Input/style"
 import { Button } from "../../components/Button/style"
 import { DbLink } from "../../components/Link/style"
 
-export const Prescricao = ({ navigation }) => {
-
-    const Voltar = () => {
-        navigation.navigate("Main")
-    }
+export function Prescricao({ navigation }) {
     return (
         <ScrollView>
             <Container>
@@ -40,7 +36,7 @@ export const Prescricao = ({ navigation }) => {
                     </View>
                 </SpacedContainer>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder="Resultado do exame de sangue : tudo normal" />
-                <TouchableOpacity onPress={Voltar}>
+                <TouchableOpacity onPress={() => navigation.navigate("Main")}>
                     <DbLink>Voltar</DbLink>
                 </TouchableOpacity>
             </Container>

@@ -6,12 +6,7 @@ import { Button, FuncButton } from "../../components/Button/style";
 import { Icon } from "react-native-elements";
 import { Text } from "../../components/Text/style";
 
-export const EsqueceuSenha = ({ navigation }) => {
-
-    const Continuar = () => {
-        navigation.navigate('CodigoEmail')
-    }
-
+export function EsqueceuSenha({ navigation }) {
     return (
         <Container>
             <FuncButton onPress={() => navigation.navigate('Login')}>
@@ -26,7 +21,7 @@ export const EsqueceuSenha = ({ navigation }) => {
             <Title>Recuperar senha</Title>
             <Text>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Text>
             <Input placeholder="Usuário ou E-mail" placeholderTextColor="#49B3BA" />
-            <Button onPress={Continuar}>
+            <Button onPress={() => navigation.navigate('NovaSenha')}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
         </Container>

@@ -6,15 +6,10 @@ import { Input } from "../../components/Input/style"
 import { ButtonTitle, Title } from "../../components/Title/style"
 import { Text } from "../../components/Text/style"
 
-export const NovaSenha = ({ navigation }) => {
-
-    const onPress = () => {
-
-        navigation.navigate('Login');
-    }
+export function NovaSenha({ navigation }) {
     return (
         <Container>
-            <FuncButton onPress={onPress}>
+            <FuncButton onPress={() => navigation.navigate("Login")}>
                 <Icon
                     color="#34898F"
                     size={30}
@@ -31,7 +26,7 @@ export const NovaSenha = ({ navigation }) => {
             <Input placeholder="Nova Senha" placeholderTextColor="#34898F" />
             <Input placeholder="Confirmar nova senha" placeholderTextColor="#34898F" />
 
-            <Button>
+            <Button onPress={() => navigation.navigate('Login')}>
                 <ButtonTitle colorText="#FFFFFF">Confirmar senha nova</ButtonTitle>
             </Button>
         </Container>

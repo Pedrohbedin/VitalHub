@@ -7,7 +7,7 @@ import { Text } from "../../components/Text/style"
 import { ButtonTitle, Title } from "../../components/Title/style"
 import React from "react"
 
-export const Cadastrar = ({ navigation }) => {
+export function Cadastrar({ navigation }) {
 
     return (
         <Container>
@@ -21,9 +21,10 @@ export const Cadastrar = ({ navigation }) => {
             <Input placeholder="Senha" placeholderTextColor="#49B3BA" />
             <Input placeholder="Confirmar Senha" placeholderTextColor="#49B3BA" />
 
-            <Button onPress={() => navigation.navigate("Login")}>
-                <ButtonTitle>CADASTRAR</ButtonTitle>
+            <Button onPress={() => navigation.navigate("CodigoEmail")}>
+                <ButtonTitle>Cadastrar</ButtonTitle>
             </Button>
+
             <DbLink onPress={() => navigation.navigate("Login")}>Cancelar</DbLink>
         </Container>
     )

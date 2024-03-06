@@ -8,17 +8,6 @@ import { TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 export function Clinica({ navigation }) {
-
-    const Cancelar = () => {
-
-        navigation.navigate('Main');
-    }
-
-    const Continuar = () => {
-
-        navigation.navigate('Medico');
-    }
-
     DATA = [
         {
             id: "3",
@@ -45,10 +34,10 @@ export function Clinica({ navigation }) {
                 renderItem={({ item }) => <CardClinica data={item} onPress={() => setSelectedId(item.id)} borderColor={item.id === selectedId ? '#496BBA' : '#FFFFFF'} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
-            <Button onPress={Continuar}><ButtonTitle colorText="white">Continuar</ButtonTitle></Button>
-            <TouchableOpacity onPress={Cancelar}>
+            <Button onPress={() => navigation.navigate('Medico')}><ButtonTitle>Continuar</ButtonTitle></Button>
+            <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                 <DbLink>Cancelar</DbLink>
             </TouchableOpacity>
-        </Container>
+        </Container >
     )
 }
