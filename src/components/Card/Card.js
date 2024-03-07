@@ -5,7 +5,6 @@ import { Title } from "../Title/style"
 import { Text } from "../Text/style"
 import { Icon } from "react-native-elements"
 import { TouchableOpacity } from "react-native"
-import { useState } from "react"
 
 export const Card = ({
     data,
@@ -44,7 +43,7 @@ export const Card = ({
                             <Text fieldWidth="auto" margin="0" fontFamily="MontserratAlternates_500Medium" colorText={data.situacao == "agendadas" ? "#C81D25" : "#344F8F"} fontSize="12px">
                                 {
                                     data.situacao == "agendadas" ? "Cancelar" :
-                                        data.situacao == "realizadas" && data.tipoConta == "Dr" ?  "" : "Ver prontuário"
+                                        data.situacao == "realizadas" ? "Ver prontuário" : ""
                                 }
                             </Text>
                         </TouchableOpacity>

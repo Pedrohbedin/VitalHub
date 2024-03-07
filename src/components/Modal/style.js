@@ -10,7 +10,7 @@ export const ModalBackground = styled.View`
     z-index: 1;
 `
 
-export const Modal = styled.View`
+export const ModalContent = styled.View`
     background-color: #FFFFFF;
     border-radius: 10px;
     position: absolute;

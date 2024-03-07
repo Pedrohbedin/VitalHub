@@ -6,6 +6,7 @@ import { Text } from "../../components/Text/style"
 import { InfoInput } from "../../components/Input/style"
 import { Button } from "../../components/Button/style"
 import { DbLink } from "../../components/Link/style"
+import { Icon } from "react-native-elements"
 
 export function Prescricao({ navigation }) {
     return (
@@ -24,10 +25,15 @@ export function Prescricao({ navigation }) {
                 <MiddleTitle textAlign="left">Prescrição médica</MiddleTitle>
                 <InfoInput multiline numberOfLines={5} style={{ textAlignVertical: 'top' }} />
                 <MiddleTitle textAlign="left">Exames médicos</MiddleTitle>
-                <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder="Nenhuma foto informada" />
+                <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder={"Nenhuma foto informada"} />
                 <SpacedContainer>
-                    <Button style={{ flex: 1 }} >
-                        <ButtonTitle colorText="#FFFFFF">Enviar</ButtonTitle>
+                    <Button backgroundColor="#49B3BA" borderColor="#49B3BA" style={{ flex: 1, flexDirection: "row", justifyContent: "center" }} >
+                        <Icon
+                            size={25}
+                            name='camera-plus-outline'
+                            type='material-community'
+                            color='white'
+                        /><ButtonTitle colorText="#FFFFFF">  Enviar</ButtonTitle>
                     </Button>
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity>
@@ -35,6 +41,8 @@ export function Prescricao({ navigation }) {
                         </TouchableOpacity>
                     </View>
                 </SpacedContainer>
+
+                <View style={{ width: "90%", height: 2, backgroundColor: "#8C8A97" }}></View>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder="Resultado do exame de sangue : tudo normal" />
                 <TouchableOpacity onPress={() => navigation.navigate("Main")}>
                     <DbLink>Voltar</DbLink>

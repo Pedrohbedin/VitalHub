@@ -35,7 +35,7 @@ export function Clinica({ navigation }) {
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false} />
             <Button onPress={() => navigation.navigate('Medico')}><ButtonTitle>Continuar</ButtonTitle></Button>
-            <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Main', { Aparece: true })}>
                 <DbLink>Cancelar</DbLink>
             </TouchableOpacity>
         </Container >

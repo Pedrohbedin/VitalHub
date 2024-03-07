@@ -6,13 +6,21 @@ import { Text } from "../../components/Text/style";
 import { MiddleTitle } from "../../components/Title/style";
 import { Icon } from "react-native-elements";
 import { BtnListAppointment } from "../../components/BtnListAppointment/BtnListAppointment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/Card";
 import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
 import { HomeCalendarComponent } from "../../components/Calender";
 
-export function Home() {
+export function Home({ navigation, route }) {
+
+    const { modal } = route.params;
+
+    useEffect(() => {
+        modal == true && setModalConsulta(true)
+        console.log(modal)
+    }, [modal])
+
 
     const [statusLista, setStatusLista] = useState("agendadas");
     const [modalCancelar, setModalCancelar] = useState(false);
@@ -21,12 +29,7 @@ export function Home() {
     const [modalDesc, setModalDesc] = useState(false);
     const [data, setData] = useState(false);
     const [tipoConta] = useState("Pa");
-    const [currentItem, setCurrentItem] = useState()
-
-    function AoClicar(item) {
-        setData(item)
-        statusLista == "agendadas" ? setModalCancelar(true) : setModalProntuario(true)
-    }
+    const [currentItem] = useState()
 
     const DATA = [
         {
@@ -104,7 +107,7 @@ export function Home() {
                     />
                 </SpacedContainer>
             </Header>
-            <Container style={{ paddingTop: 15 }}>
+            <Container style={{ marginTop: -70 }}>
                 <HomeCalendarComponent />
                 <SpacedContainer>
                     <BtnListAppointment textButton={"Agendadas"} clickButton={statusLista === "agendadas"} onPress={() => setStatusLista("agendadas")} />
@@ -113,12 +116,22 @@ export function Home() {
                 </SpacedContainer>
                 <FlatList
                     data={DATA}
-                    renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta) && <Card data={item} onAction={() => AoClicar(item)} onClick={() => {
-                        item.tipoConta === "Dr" ? setModalDesc(true) : null
-                        setCurrentItem(item)
-                    }} />}
+                    renderItem={({ item }) => (statusLista == item.situacao && tipoConta != item.tipoConta)
+                        &&
+                        <Card
+                            data={item}
+                            onAction={
+                                () => {
+                                    setData(item)
+                                    statusLista == "agendadas" ? setModalCancelar(true) : tipoConta == "Dr" ? setModalProntuario(true) : navigation.navigate("Prescricao")
+                                }}
+                            onClick={() => {
+                                statusLista == "agendadas" ? tipoConta == "Dr" ? setModalDesc(true) : "" : null
+                            }}
+                        />}
                     keyExtractor={item => item.id}
-                    showsVerticalScrollIndicator={false} />
+                    showsVerticalScrollIndicator={false}
+                />
                 <Navegator tipoConta={tipoConta} onAction={() => setModalConsulta(!modalConsulta)} visible={!modalConsulta} />
             </Container>
         </>

@@ -6,7 +6,9 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 
 const BottomTab = createBottomTabNavigator();
 
-export function Main() {
+export function Main({ route }) {
+  const { Aparece } = route.params
+  
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
@@ -37,7 +39,7 @@ export function Main() {
         },
       })}
     >
-      <BottomTab.Screen name="Home" component={Home} />
+      <BottomTab.Screen name="Home" component={Home} initialParams={{ modal: Aparece == true ? true : false }} />
       <BottomTab.Screen name="Perfil" component={Perfil} />
     </BottomTab.Navigator >
   );

@@ -21,11 +21,13 @@ export const Header = styled(LinearGradient).attrs({
     start: { x: 0, y: 0 },
     end: { x: 1, y: 1 },
 })`
-top: 0;
+    top: 0;
     width: 100%;
-    height: 200px;
+    height: 144px;
     border-radius: 0 0 15px 15px;
     padding: 20px;
+    top: 0;
+    z-index: 1;
 `;
 
 export const CardContainer = styled.View`

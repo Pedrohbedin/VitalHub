@@ -14,9 +14,11 @@ export function DataPage({ navigation }) {
 
     return (
         <>
-            <AgendarModal show={modal} onAction={() => {
+            <AgendarModal show={modal} onCancel={() => {
                 setModal(false);
-                navigation.navigate('Main')
+            }} onConfirm={() => {
+                setModal(false)
+                navigation.navigate("Main")
             }} />
             <Container>
                 <Title>Selecionar data</Title>
