@@ -89,7 +89,7 @@ export function Home({ navigation, route }) {
             <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
             <ConsultaModal show={modalConsulta} onAction={() => setModalConsulta(false)} />
             <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
-            <DescModal data={currentItem} show={modalDesc} onAction={() => setModalDesc(false)} />
+            <DescModal data={data} show={modalDesc} onAction={() => setModalDesc(false)} />
             <Header>
                 <SpacedContainer style={{ height: "100%" }} >
                     <View style={{ flexDirection: "row", gap: 10 }}>
@@ -126,7 +126,7 @@ export function Home({ navigation, route }) {
                                     statusLista == "agendadas" ? setModalCancelar(true) : tipoConta == "Dr" ? setModalProntuario(true) : navigation.navigate("Prescricao")
                                 }}
                             onClick={() => {
-                                statusLista == "agendadas" ? tipoConta == "Dr" ? setModalDesc(true) : "" : null
+                                statusLista == "agendadas" ? tipoConta == "Pa" ? setModalDesc(true)  : "" : null
                             }}
                         />}
                     keyExtractor={item => item.id}

@@ -7,8 +7,8 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 const BottomTab = createBottomTabNavigator();
 
 export function Main({ route }) {
-  const { Aparece } = route.params
-  
+  const Aparece = route.params;
+
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
