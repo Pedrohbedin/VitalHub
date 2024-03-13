@@ -22,7 +22,7 @@ import { DbLink } from "../../components/Link/style"
 export function Local({ navigation }) {
 
     const mapReference = useRef()
-
+    const [dark, setDark] = useState(false)
     const [initialPosition, setInitialPosition] = useState(null);
     const [finalPosition, setFinalPosition] = useState({
         latitude: -23.2447,
