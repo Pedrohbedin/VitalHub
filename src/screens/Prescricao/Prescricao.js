@@ -27,7 +27,7 @@ export function Prescricao({ navigation }) {
                 <MiddleTitle textAlign="left">Exames médicos</MiddleTitle>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder={"Nenhuma foto informada"} />
                 <SpacedContainer>
-                    <Button backgroundColor="#49B3BA" borderColor="#49B3BA" style={{ flex: 1, flexDirection: "row", justifyContent: "center" }} >
+                    <Button onPress={() => navigation.navigate("Camera")} backgroundColor="#49B3BA" borderColor="#49B3BA" style={{ flex: 1, flexDirection: "row", justifyContent: "center" }} >
                         <Icon
                             size={25}
                             name='camera-plus-outline'

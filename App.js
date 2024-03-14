@@ -15,6 +15,7 @@ import { DataPage } from "./src/screens/Seletores/Data/Data";
 import { Main } from "./src/screens/Main/Main";
 import { Local } from "./src/screens/Local/Local";
 import { Prescricao } from "./src/screens/Prescricao/Prescricao";
+import { CameraScreen } from "./src/screens/Camera/Camera";
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_700Bold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates"
 import { Quicksand_600SemiBold, Quicksand_500Medium } from "@expo-google-fonts/quicksand"
@@ -52,6 +53,7 @@ export default function App() {
         <Stack.Screen name="Main" component={Main} options={{ title: "Main" }} />
         <Stack.Screen name="Local" component={Local} options={{ title: "Local" }} />
         <Stack.Screen name="Prescricao" component={Prescricao} options={{ title: "Prescricao" }} />
+        <Stack.Screen name="Camera" component={CameraScreen} options={{ title: "Camera" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
