@@ -7,8 +7,12 @@ import { InfoInput } from "../../components/Input/style"
 import { Button } from "../../components/Button/style"
 import { DbLink } from "../../components/Link/style"
 import { Icon } from "react-native-elements"
+import { CameraModal } from "../Camera/Camera"
+import { useState } from "react"
 
 export function Prescricao({ navigation }) {
+    const [showCameraModal, setShowCameraModal] = useState(false)
+    const [uriCameraCapture, setUriCameraCapture] = useState("")
     return (
         <ScrollView>
             <Container>
@@ -27,7 +31,7 @@ export function Prescricao({ navigation }) {
                 <MiddleTitle textAlign="left">Exames médicos</MiddleTitle>
                 <InfoInput multiline numberOfLines={5} style={{ textAlign: "center" }} placeholder={"Nenhuma foto informada"} />
                 <SpacedContainer>
-                    <Button onPress={() => navigation.navigate("Camera")} backgroundColor="#49B3BA" borderColor="#49B3BA" style={{ flex: 1, flexDirection: "row", justifyContent: "center" }} >
+                    <Button onPress={() => setShowCameraModal(true)} backgroundColor="#49B3BA" borderColor="#49B3BA" style={{ flex: 1, flexDirection: "row", justifyContent: "center" }} >
                         <Icon
                             size={25}
                             name='camera-plus-outline'
@@ -48,6 +52,11 @@ export function Prescricao({ navigation }) {
                     <DbLink>Voltar</DbLink>
                 </TouchableOpacity>
             </Container>
+            <CameraModal
+                visible={showCameraModal}
+                setUriCameraCapture={setUriCameraCapture}
+                setShowCameraModal={setShowCameraModal}
+            />
         </ScrollView>
     )
 }

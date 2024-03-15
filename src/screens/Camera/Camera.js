@@ -9,7 +9,7 @@ import { Icon } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export function CameraScreen({ navigation }) {
+export function CameraModal({ visible, setUriCameraCapture, setShowCameraModal }) {
 
     /*
       1 - Quando salvar a foto e clicar na lixeira - remover a galeria
@@ -64,35 +64,39 @@ export function CameraScreen({ navigation }) {
     }
 
     return (
-        <View style={styles.container}>
-            <Camera
-                ref={cameraRef}
-                style={styles.camera}
-                ratio='16:9'
-                type={tipoCamera ? "back" : "front"}
-                flashMode={flashMode ? "on" : "off"}
-            >
-                <TouchableOpacity style={{ margin: 40 }} onPress={() => navigation.navigate("Prescricao")}>
-                    <Icon
-                        color="white"
-                        size={30}
-                        name='arrowleft'
-                        type="antdesign"
-                    />
-                </TouchableOpacity>
-                <View style={styles.viewFlip}></View>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                    <TouchableOpacity style={styles.btnFlash} onPress={FlashPhoto}>
-                        <FontAwesome name="bolt" size={24} color={flashMode ? "yellow" : "#FFF"} />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={CapturePhoto} style={styles.btnCapture}>
-                        <FontAwesome name='camera' size={23} color="#fff" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => setTipoCamera(!tipoCamera)} style={styles.btnCapture}>
-                        <Ionicons name='camera-reverse' size={23} color="#fff" />
-                    </TouchableOpacity>
+        <Modal visible={visible} transparent>
+            <View style={styles.container}>
+                <View style={styles.cameraContainer}>
+                    <Camera
+                        ref={cameraRef}
+                        style={styles.camera}
+                        ratio='16:9'
+                        type={tipoCamera ? "back" : "front"}
+                        flashMode={flashMode ? "on" : "off"}
+                    >
+                        <TouchableOpacity style={{ margin: 40 }} onPress={() => setShowCameraModal(false)}>
+                            <Icon
+                                color="white"
+                                size={30}
+                                name='arrowleft'
+                                type="antdesign"
+                            />
+                        </TouchableOpacity>
+                        <View style={styles.viewFlip}></View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                            <TouchableOpacity style={styles.btnFlash} onPress={FlashPhoto}>
+                                <FontAwesome name="bolt" size={24} color={flashMode ? "yellow" : "#FFF"} />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={CapturePhoto} style={styles.btnCapture}>
+                                <FontAwesome name='camera' size={23} color="#fff" />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => setTipoCamera(!tipoCamera)} style={styles.btnCapture}>
+                                <Ionicons name='camera-reverse' size={23} color="#fff" />
+                            </TouchableOpacity>
+                        </View>
+                    </Camera >
                 </View>
-            </Camera >
+            </View>
             <StatusBar style="auto" />
 
             <Modal animationType='slide' transparent={false} visible={openModal} >
@@ -113,21 +117,24 @@ export function CameraScreen({ navigation }) {
                         source={{ uri: photo }} />
                 </View>
             </Modal>
-        </View>
+        </Modal>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: "rgba(0, 0, 0, 0.30)",
         alignItems: 'center',
         justifyContent: 'center',
     },
+    cameraContainer: {
+        width: "85%",
+        height: "75%",
+    },
     camera: {
-        flex: 1,
-        height: "80%",
-        width: "100%"
+        width: "100%",
+        height: "100%",
     },
     viewFlip: {
         flex: 1,
