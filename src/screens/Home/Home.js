@@ -11,6 +11,22 @@ import { Card } from "../../components/Card/Card";
 import { CancelModal, ConsultaModal, DescModal, ProntuarioModal } from "../../components/Modal";
 import { Navegator } from "../../components/Navegator/Navegator";
 import { HomeCalendarComponent } from "../../components/Calender";
+import * as Notifications from "expo-notifications"
+
+//Solicita permições de notificação ao iniciar o app
+Notifications.requestPermissionsAsync();
+
+//Defini como as notificações devem ser tratadas quando recebidass
+Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+        // Reproduzir som ao receber notificação?
+        shouldPlaySound: true,
+        //Número de notificações no ícone do app
+        shouldSetBadge: false,
+        // Mostrar alerta quando a notificação for recebidar? 
+        shouldShowAlert: true
+    })
+})
 
 export function Home({ navigation, route }) {
 
@@ -84,11 +100,34 @@ export function Home({ navigation, route }) {
         },
     ];
 
+    const handleCallNotifications = async () => {
+
+        // Obtém o status da permisão
+        const { status } = await Notifications.getPermissionsAsync();
+
+        if (status != "granted") {
+            alert("Você não deixou as notificações ativas")
+            return;
+        }
+        // Agenda uma notificação
+        await Notifications.scheduleNotificationAsync({
+            content: {
+                title: "Consulta Cancelada",
+                body: "Seu/Sua " + tipoConta == "Pa" ? "Dr" : "Paciênte" + " cancelou a consulta",
+                sound: '',
+            },
+            trigger: null
+        })
+    }
+
     return (
         <>
-            <ProntuarioModal data={data} show={modalProntuario} onAction={() => setModalProntuario(false)} />
+            <ProntuarioModal data={data} show3 ={modalProntuario} onAction={() => setModalProntuario(false)} />
             <ConsultaModal show={modalConsulta} onAction={() => setModalConsulta(false)} />
-            <CancelModal show={modalCancelar} onAction={() => setModalCancelar(false)} />
+            <CancelModal show={modalCancelar} onAction={() => {
+                setModalCancelar(false)
+                handleCallNotifications()
+            }} />
             <DescModal data={data} show={modalDesc} onAction={() => setModalDesc(false)} />
             <Header>
                 <SpacedContainer style={{ height: "100%" }} >
@@ -123,10 +162,13 @@ export function Home({ navigation, route }) {
                             onAction={
                                 () => {
                                     setData(item)
-                                    statusLista == "agendadas" ? setModalCancelar(true) : tipoConta == "Dr" ? setModalProntuario(true) : navigation.navigate("Prescricao")
+                                    statusLista == "agendadas" ?
+                                        setModalCancelar(true)
+                                        :
+                                        tipoConta == "Dr" ? setModalProntuario(true) : navigation.navigate("Prescricao")
                                 }}
                             onClick={() => {
-                                statusLista == "agendadas" ? tipoConta == "Pa" ? setModalDesc(true)  : "" : null
+                                statusLista == "agendadas" ? tipoConta == "Pa" ? setModalDesc(true) : "" : null
                             }}
                         />}
                     keyExtractor={item => item.id}
